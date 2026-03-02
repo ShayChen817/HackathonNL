@@ -30,7 +30,7 @@ Open `.env` and fill in the credentials distributed at kickoff:
 | `COLLIBRA_BASE_URL`     | Pre-filled: `https://next.collibra.com`                              |
 | `COLLIBRA_USERNAME`     | Your Collibra username (from organizers)                             |
 | `COLLIBRA_PASSWORD`     | Your Collibra password (from organizers)                             |
-| `DELTA_SHARING_PROFILE` | Pre-filled: `config.json` (will be provided by Collibra Team)        |
+| `DELTA_SHARING_PROFILE` | Pre-filled: `config.json` (from organizers)                          |
 | `DELTA_SHARING_LIMIT`   | Number of rows per table load (default `1000`, set `0` for all rows) |
 
 
