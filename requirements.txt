@@ -1,0 +1,4 @@
+delta-sharing
+pandas
+python-dotenv
+requests
