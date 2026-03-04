@@ -2,3 +2,4 @@ delta-sharing
 pandas
 python-dotenv
 requests
+pandasql
