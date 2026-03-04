@@ -30,7 +30,7 @@ Open `.env` and fill in the credentials distributed at kickoff:
 | `COLLIBRA_BASE_URL`     | Pre-filled: `https://next.collibra.com`                              |
 | `COLLIBRA_USERNAME`     | Your Collibra username (from organizers)                             |
 | `COLLIBRA_PASSWORD`     | Your Collibra password (from organizers)                             |
-| `DELTA_SHARING_PROFILE` | Pre-filled: `config.json` (from organizers)                          |
+| `DELTA_SHARING_PROFILE` | `config.json` (from organizers)                                      |
 | `DELTA_SHARING_LIMIT`   | Number of rows per table load (default `1000`, set `0` for all rows) |
 
 
@@ -110,7 +110,7 @@ Each layer lives in a Collibra **domain** (or in Databricks for the data layer).
 | Layer    | Domain                     | Domain ID                              | What you'll find                                                                 |
 | -------- | -------------------------- | -------------------------------------- | -------------------------------------------------------------------------------- |
 | Business | Glossary                   | `019c907a-40d8-74d9-84c5-83abd6ae4d4e` | Business terms with governed definitions and synonyms                            |
-| Business | Metrics Catalog            | `019c9f76-2a44-7242-8f7d-cf40e16f270b` | Metric definitions and calculation rules                                         |
+| Business | Metrics Catalog            | `019c9f76-2a44-7242-8f7d-cf40e16f270b` | Measure definitions and calculation rules                                        |
 | Logical  | Logical Layer              | `019c9e6d-9079-72e3-b0f9-e64c49a57ac9` | Data Entities and Data Attributes that bridge business terms to physical columns |
 | Physical | Physical Data Layer        | `019c9e17-b6f2-725e-9181-dbda44044df9` | Schemas, tables, and columns with plain-English descriptions                     |
 | Data     | Databricks (Delta Sharing) | —                                      | 6 Centercode tables accessed via `config.json`                                   |
@@ -122,11 +122,13 @@ For details on how to query each layer, see the guides below.
 
 ## Guides
 
-| Guide | What it covers |
-|---|---|
-| [Collibra API Guide](docs/collibra_api_guide.md) | How Collibra is structured, how to authenticate, how to query each layer, how to navigate relations between layers |
-| [Delta Sharing Guide](docs/delta_sharing_guide.md) | How to connect to Databricks, load the six hackathon tables, and explore the raw data |
-| [Hackathon Briefing](docs/hackathon-briefing.md) | Overview of the hackathon goals, datasets, and tasks. Start here if you're new to the project. |
+
+| Guide                                              | What it covers                                                                                                     |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [Collibra API Guide](docs/collibra_api_guide.md)   | How Collibra is structured, how to authenticate, how to query each layer, how to navigate relations between layers |
+| [Delta Sharing Guide](docs/delta_sharing_guide.md) | How to connect to Databricks, load the six hackathon tables, and explore the raw data                              |
+| [Hackathon Briefing](docs/hackathon-briefing.md)   | Overview of the hackathon goals, datasets, and tasks. Start here if you're new to the project.                     |
+
 
 ---
 
@@ -146,6 +148,6 @@ For details on how to query each layer, see the guides below.
 ## Security
 
 - `**.env`** contains Collibra credentials. Never commit it. Use `.env.example` as the shareable template.
-- `**config.json**` contains the Delta Sharing bearer token. Treat it like a password. Never paste it in public channels.
+- `**config.json`** contains the Delta Sharing bearer token. Treat it like a password. Never paste it in public channels.
 - Both files are listed in `.gitignore`.
 
