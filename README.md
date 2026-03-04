@@ -2,7 +2,7 @@
 
 Starter pack for building **"Ask Your Data Product"** — a system that answers business questions from data by grounding itself in governed semantic context (Collibra) and executing against real data (Databricks).
 
-Read the full case and challenge rules in `[docs/hackathon-briefing.docx.md](docs/hackathon-briefing.docx.md)`.
+Read the full case and challenge rules in [docs/hackathon-briefing.docx.md](docs/hackathon-briefing.docx.md).
 
 ---
 
