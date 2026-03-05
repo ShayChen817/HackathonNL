@@ -83,16 +83,18 @@ Delta Sharing organises shared data in a three-level hierarchy:
 | **Schema** | A namespace within the share, equivalent to a database schema. In the hackathon this is `centercode`. |
 | **Table** | The actual data table. |
 
-**The six hackathon tables:**
+**The eight hackathon tables:**
 
 | Table | Fully qualified name |
 |---|---|
 | `zcc_act_stat` | `centercode_share.centercode.zcc_act_stat` |
+| `zcc_knt_mstr` | `centercode_share.centercode.zcc_knt_mstr` |
 | `zcc_prj_hdr` | `centercode_share.centercode.zcc_prj_hdr` |
 | `zcc_prt_mtrc` | `centercode_share.centercode.zcc_prt_mtrc` |
 | `zcc_ptm_lnk` | `centercode_share.centercode.zcc_ptm_lnk` |
 | `zcc_qa_sat` | `centercode_share.centercode.zcc_qa_sat` |
 | `zcc_tkt_itm` | `centercode_share.centercode.zcc_tkt_itm` |
+| `zcc_usr_mstr` | `centercode_share.centercode.zcc_usr_mstr` |
 
 > **Column names are cryptic by design.** Names like `Z_ENG_ST`, `Z_IMP_SC`, `Z_OCC_MNG` do not explain what they store. The governed descriptions for every column live in Collibra's Physical Data Layer — see the [Collibra API Guide](collibra_api_guide.md).
 
@@ -156,7 +158,7 @@ The `#` separator tells the library to split on the profile path and the table F
 
 ---
 
-### 5.3 Load all six tables at once
+### 5.3 Load all eight tables at once
 
 ```python
 import os
@@ -170,11 +172,13 @@ LIMIT = int(os.getenv("DELTA_SHARING_LIMIT", "1000") or "1000")
 
 TABLES = {
     "zcc_act_stat": "centercode_share.centercode.zcc_act_stat",
+    "zcc_knt_mstr": "centercode_share.centercode.zcc_knt_mstr",
     "zcc_prj_hdr":  "centercode_share.centercode.zcc_prj_hdr",
     "zcc_prt_mtrc": "centercode_share.centercode.zcc_prt_mtrc",
     "zcc_ptm_lnk":  "centercode_share.centercode.zcc_ptm_lnk",
     "zcc_qa_sat":   "centercode_share.centercode.zcc_qa_sat",
     "zcc_tkt_itm":  "centercode_share.centercode.zcc_tkt_itm",
+    "zcc_usr_mstr": "centercode_share.centercode.zcc_usr_mstr",
 }
 
 dataframes = {}
@@ -184,7 +188,7 @@ for name, fqn in TABLES.items():
     print(f"Loaded {name}: {dataframes[name].shape}")
 ```
 
-After this, `dataframes["zcc_act_stat"]`, `dataframes["zcc_prj_hdr"]`, etc. are standard pandas DataFrames.
+After this, `dataframes["zcc_act_stat"]`, `dataframes["zcc_prj_hdr"]`, `dataframes["zcc_knt_mstr"]`, `dataframes["zcc_usr_mstr"]`, etc. are standard pandas DataFrames.
 
 ---
 
@@ -239,12 +243,14 @@ df_full = delta_sharing.load_as_pandas("config.json#centercode_share.centercode.
 {profile_file_path}#{share_name}.{schema_name}.{table_name}
 ```
 
-**The six hackathon tables:**
+**The eight hackathon tables:**
 ```
 config.json#centercode_share.centercode.zcc_act_stat   → activity engagement status
+config.json#centercode_share.centercode.zcc_knt_mstr   → knowledge master records
 config.json#centercode_share.centercode.zcc_prj_hdr    → project (program) headers
 config.json#centercode_share.centercode.zcc_prt_mtrc   → participant metrics
 config.json#centercode_share.centercode.zcc_ptm_lnk    → participant/team links
 config.json#centercode_share.centercode.zcc_qa_sat     → satisfaction survey scores
 config.json#centercode_share.centercode.zcc_tkt_itm    → feedback tickets
+config.json#centercode_share.centercode.zcc_usr_mstr   → user master records
 ```
