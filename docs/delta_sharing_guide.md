@@ -245,12 +245,12 @@ df_full = delta_sharing.load_as_pandas("config.json#centercode_share.centercode.
 
 **The eight hackathon tables:**
 ```
-config.json#centercode_share.centercode.zcc_act_stat   → activity engagement status
-config.json#centercode_share.centercode.zcc_knt_mstr   → knowledge master records
-config.json#centercode_share.centercode.zcc_prj_hdr    → project (program) headers
-config.json#centercode_share.centercode.zcc_prt_mtrc   → participant metrics
-config.json#centercode_share.centercode.zcc_ptm_lnk    → participant/team links
-config.json#centercode_share.centercode.zcc_qa_sat     → satisfaction survey scores
-config.json#centercode_share.centercode.zcc_tkt_itm    → feedback tickets
-config.json#centercode_share.centercode.zcc_usr_mstr   → user master records
+config.json#centercode_share.centercode.zcc_act_stat   
+config.json#centercode_share.centercode.zcc_knt_mstr  
+config.json#centercode_share.centercode.zcc_prj_hdr   
+config.json#centercode_share.centercode.zcc_prt_mtrc   
+config.json#centercode_share.centercode.zcc_ptm_lnk   
+config.json#centercode_share.centercode.zcc_qa_sat    
+config.json#centercode_share.centercode.zcc_tkt_itm   
+config.json#centercode_share.centercode.zcc_usr_mstr   
 ```
