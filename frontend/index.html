@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Your Data — Collibra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Animated grid background ── -->
+<div class="bg-grid"></div>
+<div class="bg-glow glow-green"></div>
+<div class="bg-glow glow-navy"></div>
+
+<!-- ── Header ── -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <svg class="collibra-logo" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Collibra icon recreated in SVG dots/bars -->
+        <rect x="20" y="2"  width="5" height="5"  rx="2.5" fill="#78BE20"/>
+        <rect x="27" y="2"  width="5" height="5"  rx="2.5" fill="#78BE20"/>
+        <rect x="14" y="9"  width="11" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="27" y="9"  width="11" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="2"  y="16" width="17" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="21" y="16" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="28" y="16" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="35" y="16" width="15" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="20" y="2"  width="5"  height="48" rx="2.5" fill="none"/>
+        <rect x="2"  y="23" width="17" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="21" y="23" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="28" y="23" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="35" y="23" width="15" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="14" y="30" width="11" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="27" y="30" width="11" height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="20" y="37" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="27" y="37" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="20" y="44" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+        <rect x="27" y="44" width="5"  height="5" rx="2.5" fill="#78BE20"/>
+      </svg>
+      <span class="logo-text">Collibra</span>
+      <span class="logo-divider">|</span>
+      <span class="logo-subtitle">Ask Your Data</span>
+    </div>
+    <div class="status-badge" id="statusBadge">
+      <span class="status-dot"></span>
+      <span id="statusText">Connecting…</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">
+      <span class="gradient-text">Governed AI</span><br/>
+      for Enterprise Data
+    </h1>
+    <p class="hero-sub">Ask plain-language questions. Get answers grounded in Collibra's official business definitions — no guessing, full traceability.</p>
+  </section>
+
+  <!-- KPI strip -->
+  <section class="kpi-row" id="kpiRow">
+    <div class="kpi-card" id="kpiProjects">
+      <div class="kpi-icon">📁</div>
+      <div class="kpi-value" id="kpiOngoing">—</div>
+      <div class="kpi-label">Ongoing Projects</div>
+    </div>
+    <div class="kpi-card" id="kpiTesters">
+      <div class="kpi-icon">👥</div>
+      <div class="kpi-value" id="kpiActiveTesters">—</div>
+      <div class="kpi-label">Active Testers</div>
+    </div>
+    <div class="kpi-card" id="kpiTables">
+      <div class="kpi-icon">🗄️</div>
+      <div class="kpi-value" id="kpiTableCount">—</div>
+      <div class="kpi-label">Data Tables</div>
+    </div>
+    <div class="kpi-card" id="kpiTerms">
+      <div class="kpi-icon">📚</div>
+      <div class="kpi-value" id="kpiTermCount">—</div>
+      <div class="kpi-label">Governed Terms</div>
+    </div>
+  </section>
+
+  <!-- Ask panel -->
+  <section class="ask-section">
+    <div class="ask-card">
+      <div class="ask-header">
+        <span class="ask-badge">✦ Governed AI Query</span>
+        <span class="powered-by">Powered by <strong>Claude</strong> + Collibra</span>
+      </div>
+      <div class="ask-input-wrap">
+        <textarea
+          id="questionInput"
+          class="ask-input"
+          placeholder="Ask anything about your data…&#10;e.g. How many active testers are in ongoing programs?"
+          rows="3"
+        ></textarea>
+        <button class="ask-btn" id="askBtn" onclick="submitQuestion()">
+          <span class="btn-text">Ask</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+
+      <!-- Suggested questions -->
+      <div class="suggestions">
+        <span class="sug-label">Try:</span>
+        <button class="sug-pill" onclick="setQ('How many active testers are in ongoing programs?')">Active testers</button>
+        <button class="sug-pill" onclick="setQ('How many ongoing projects do we have?')">Ongoing projects</button>
+        <button class="sug-pill" onclick="setQ('What is the total number of feedback tickets submitted?')">Feedback tickets</button>
+        <button class="sug-pill" onclick="setQ('Which projects have the most active testers?')">Top projects</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result area — SIMPLIFIED FOR BUSINESS USERS -->
+  <section class="result-section" id="resultSection" style="display:none">
+    <div class="result-card">
+
+      <!-- Question (simple header) -->
+      <div class="result-header">
+        <h2 class="result-question" id="resultQuestion"></h2>
+      </div>
+
+      <!-- Thinking animation -->
+      <div class="thinking" id="thinking">
+        <div class="think-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="think-label">Retrieving data…</span>
+      </div>
+
+      <!-- Clean result content -->
+      <div id="resultContent" style="display:none">
+
+        <!-- Answer text (if simple) -->
+        <div class="answer-simple" id="blockAnswerSimple" style="display:none">
+          <div class="answer-text" id="bodyAnswer"></div>
+        </div>
+
+        <!-- Data table (if structured) -->
+        <div class="data-table-wrapper" id="blockTable" style="display:none">
+          <table class="data-table" id="dataTable"></table>
+        </div>
+
+      </div>
+
+      <!-- Error state -->
+      <div class="error-block" id="errorBlock" style="display:none">
+        <span class="error-icon">⚠</span>
+        <span id="errorMsg"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Active Tester detail card -->
+  <section class="detail-section" id="detailSection" style="display:none">
+    <div class="result-card">
+      <div class="block-label" style="margin-bottom:1.2rem">👥 Active Tester Breakdown <span class="governed-tag">100% Deterministic</span></div>
+      <div class="breakdown-grid" id="breakdownGrid"></div>
+      <div class="provenance" id="provenance"></div>
+    </div>
+  </section>
+
+  <!-- Tables overview -->
+  <section class="tables-section">
+    <h2 class="section-title">Data Sources <span class="tag-live">LIVE</span></h2>
+    <div class="tables-grid" id="tablesGrid">
+      <div class="table-skeleton"></div>
+      <div class="table-skeleton"></div>
+      <div class="table-skeleton"></div>
+      <div class="table-skeleton"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <span>Team 18 · Next Level Challenge · Collibra Hackathon 2026</span>
+  <span class="footer-sep">·</span>
+  <span>Governed by <a href="https://next.collibra.com" target="_blank">Collibra</a></span>
+</footer>
+
+<script src="app.js?v=20260311"></script>
+</body>
+</html>

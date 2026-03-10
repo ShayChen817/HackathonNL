@@ -45,6 +45,7 @@ Thumbs.db
 .env.local
 .env.*.local
 secrets/
+config.json
 
 # Logs
 *.log
