@@ -1,0 +1,4402 @@
+{
+  "business_terms": [
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850031",
+      "name": "Active Tester",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "An active participant in a preview program. We consider that a tester is active or  engaged if... - They have completed  at least half of the activities/test scenarios OR - They have completed  at least two program surveys OR - They have logged  at least three feedback tickets Extra indicators to help determine how active a participant is... # logins in Centercode # votes on other participants tickets # comments logged in other participants tickets",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "name": "Activities",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Tasks that guide participants to explore and engage with product features during a test.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "019c9f66-ef2e-73db-9e33-2e4e9559ecfd",
+      "name": "Activity Status",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "the engagement status (Viewed, Unengaged, Completed) of participants for each activity of every beta project. Viewed, Not applicable, Completed, Blocked, Unengaged",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "1cad7f11-01d4-4475-afab-15ac0d4e0dc2",
+      "name": "Alpha aka Internal preview",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "An Alpha version of a preview is a first version that is exposed to  Collibra internal users  to enable them to provide the feedback on the overall user experience, the effectiveness of the feature and any issues which matter to them.   The Product team might decide to leverage the beta platform ( Centercode ) in order to deliver an organised Alpha  program .",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850034",
+      "name": "Centercode",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Vendor name of the platform that we use to manage our  customer validation  projects (preview programs). URL is preview.collibra.com",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "name": "Centercode Activity",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850036",
+      "name": "Centercode Project",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Within Centercode, the Preview Program Manager creates a 'Project' to manage individual preview or Early Adopters programs. These projects are inherently private, and only the Preview Program Manager and Product Manager can authorize access for qualifying participants.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "019caf46-919a-7386-9dde-330b687cea1a",
+      "name": "Customer",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A “Customer” is a top-level account that has purchased a product or service directly or through one of their hierarchy from Collibra.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850037",
+      "name": "Customer Satisfaction",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A key performance indicator, commonly shown as a percentage, indicating the quality of a product experience. For private previews, it is retrieved via the final evaluation survey question 'How satisfied are you with this feature in its current state?'.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850038",
+      "name": "Customer Tester Champions",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A group of influential customers invited to provide advice and feedback on a product, service, or brand via the preview program.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850039",
+      "name": "Delta Health Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A real-time letter grade indicating how well a project is running based on feature coverage and submitted feedback. It can be found in the Centercode project dashboard.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003a",
+      "name": "Delta Impact Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A percentage that measures the effect of total project feedback against the feedback your team has addressed. It can be found at the Centercode project level. (ND - OD)/OD x 100 = Delta Impact Score  ND = New Delta Success Score  OD = Original Delta Success Score",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003b",
+      "name": "Delta Success Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A value that balances positive and negative feedback to show the overall achievement of your product in real time. It can be found in the Centercode project dashboard.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003c",
+      "name": "Discussion",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Type of Feedback in preview.collibra.com designed to capture tester conversations and encourage ongoing interaction within a project. Just like Issues, Ideas, and Praise, Discussions are one of the standard Feedback Types. They’re commonly used to let testers talk with each other, share thoughts, and collaborate, all within the secure environment of your project. This helps create a strong sense of community, increases participant engagement, and allows for more robust reporting on tester conversations.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003d",
+      "name": "Early Adopters Program",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A program that offers customers an opportunity to go further, continuing the conversation with the Product Manager even after the preview stage closes and providing extra support to help them adopt. It allows the Product team to get early signals on what needs iteration and helps streamline efforts for feedback collection post GA. It takes places in preview.collibra.com.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003e",
+      "name": "Feature",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A distinct trait or experience that delivers value to a user. In Centercode, we collect user feedback on each feature via activities (feature = activity).",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "4cb0eccc-d7a1-44c4-a480-81e849ed635c",
+      "name": "Feature Configuration",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A Feature Configuration (formerly known as  Customer Controlled Feature Flag ) is a feature toggle part of the Collibra settings (or Console) that allows customers to adopt certain features / products in public beta preview in advance of GA. By toggling the feature on, the customer accepts that the feature / product might not be complete or not yet be meeting all necessary criteria for enterprise-grade functionality. At some point in time, when the feature goes to GA, the feature configuration defaults or removal is controlled by the Product Manager (some features that are released shouldn't have any opt in or opt out, others should and it is up to the PM to differentiate).",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "f96709a8-ed9c-49fa-bf48-8daa41442d51",
+      "name": "Feature Flag",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A feature flag (formerly known as  Collibra Controlled feature flag ) is a feature toggle, managed by Collibra, that allows Collibra at run-time to turn on/off a particular feature / product for an individual Collibra Cloud instance. Feature Flags are instrumental to release certain features / products in private beta in advance of its GA, to a restricted group of customers in order to be able to get customer feedback.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285003f",
+      "name": "Feature (flag) configuration",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Feature toggle part of the Collibra settings (or Console) that allows customers to adopt certain features / products in public beta preview in advance of GA. By toggling the feature on, the customer accepts that the feature / product might not be complete or not yet be meeting all necessary criteria for enterprise-grade functionality. At some point in time, when the feature goes to GA, the feature configuration defaults or removal is controlled by the Product Manager (some features that are released shouldn't have any opt in or opt out, others should and it is up to the PM to differentiate).",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850040",
+      "name": "Feedback Impact Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A value automatically applied to incoming input that reflects its potential influence on product success. This can be found for each feedback ticket registered in Centercode. It's calculated by multiplying the \"weight\" (the importance or value assigned to a piece of feedback, like how critical or high-priority it is) by its \"popularity\" (how often testers report it, including the number of duplicates, votes, and comments). The higher the impact score, the greater the effect that feedback will have on your product's success.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850042",
+      "name": "Ideal Tester",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A user that has met all recruitment requirements and is eager to participate in a preview program. We use the ideal tester description to recruit participats. The description should include persona type, technical requirements, etc.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850043",
+      "name": "Ideas",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A type of feedback that identifies feature additions or improvements that would elevate the user experience.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850044",
+      "name": "Incentives",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A reward or thank you gift for participants who have engaged in a user test. An example of this are Collibra swag links.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850045",
+      "name": "Issues",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Feedback representing a quality, performance, or interoperability problem that has diminished a user's experience.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "019cada4-9bb1-77b5-b386-98d180279766",
+      "name": "Occurence Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The 'number of occurrences' in Centercode generally refers to how many times the same feedback issue, idea, or report has appeared within the system. This is often tracked through duplicate submissions, where multiple testers may report the same feedback",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850046",
+      "name": "Participant Seat",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Participant seats are the user accounts in Centercode meant for testers/participants of validation projects. These are mainly customers.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850047",
+      "name": "Praise",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Feedback representing what is working well, what is delightful, or what users are satisfied with in a product.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "485cd852-73cd-4d56-bb5c-bcef60b3cc37",
+      "name": "Preview",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The term  preview  is used in the context of pre-GA releasing of  a new product (like AI Governance), a new feature (like GenAI descriptions) or an improved user experience (the new Banyan UI released in 2024)   A preview is initially only released  internally ( alpha) , and subsequently to only a  limited  number of customers  (private preview,  formerly known as  private beta) . These customers are committing to spend time and effort to test and provide feedback via  preview.collibra.com . The goal of releasing a preview (in alpha and beta) is to be able to  qualify  the quality, usability, and business value of the new product / feature through the collection of user feedback during a predefined period of time via Centercode validating usage analytics through Pendo or other tools monitoring technical performance data through Datadog, OpenTelemetry or other tools Based on the feedback collected during the preview period, the team can improve the product or feature, maybe even release  multiple versions  during the preview to ultimately be able to launch a successful feature / product in GA to the entire market. There is no general guideline in terms of the  duration  of a preview. Some (smaller) features are only briefly in preview (one month), while other (larger) features, new products or fundamental UX improvements are in preview for a longer period of time. Releasing a feature / product in preview is an iterative process that takes time, a lot of patience, customer conversations, and most of all still a lot of product and engineering work to get it to GA.   For a feature / product where the risk to the customer is low (ex. no breaking changes) or where it is easy to change and update the feature / product rapidly after customers begin using them, a strategy of running a larger open preview ( public preview,  formerly known as  public beta )  can be viable. In the opposite case, where the risk for the customer is high, and the difficulty of introducing changes is also high, then it is recommended to run a comprehensive and long preview with a limited number of customers ( private preview ) before public preview.   Risk for the customer LOW HIGH   Difficulty of change LOW Immediate GA or public preview Private preview HIGH Private preview Private preview A product, feature or new UX in private preview is released behind  a Collibra controlled feature flag/configuration . In other words, the Product Manager decides which customers get access. And the Product Manager - assisted by the Customer Validation Manager - will engage with the right customers to collect feedback and iterate on the feedback until it is ready for General Availability. Product lifecycle stage Preview type Configuration feature flags (Collibra controlled) Configuration feature flags (Customer controlled) Field enablement Development (validation) Preview Internal preview (alpha) Enabled for internal instances only N/A Not necessary Development (validation) Preview Private preview (previously known as private beta) Enabled for some customers, the ones participating in the preview program* N/A Awareness required Development (validation) Preview Public preview (previously known as public beta) Enabled for all customers (limitation might be applicable e.g. by Cloud provider or region, but within the specified limitations, all customers can access it Enabled by the customer admin in the Settings page Enablement depending on the tiering of the initiative/product General Available - Feature flag removed one or more releases after GA Configuration defaults or removal controlled by PM story** Wayfinder (General, technical session), test/labs, university courses, deep dives, FAQs...) End of Life - N/A N/A Wayfinder (genertal session), FAQ, Fact Sheet, Migration plan *in some cases, for private previews where it is not possible to test in the customer non prod environment, the Product Manager can distribute temporary sandbox test instances (tier 1 initiatives only). **some features shouldn't have any opt in or opt out - it is up to the PM to differentiate.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "7fa3fa3d-f484-497a-982a-2b67f042d0fc",
+      "name": "Preview (Beta) test environment",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Collibra Cloud non-production instance provided by the Collibra team to a customer in the context of a private preview program in order to allow the testers at the customer to participate and complete the test activities / scenarios. This is an exception, as tests ideally place in the customer non-production (dev / test) environment. We only provide with preview test environments for certain beta projects where the customer can not enable the beta feature on their own non-production environment. The preview test environment must expire after program completion The test environment is requested via Salesforce by the Product Manager responsible for the beta program Example of a Salesforce request Test environments provided for previews should be tracked by the team to appropiately measure how many do we deliver, when do they expiry, monitor usage via Pendo, etc. Example of instances  track list for a private preview   Resource: understanding when to provide a dedicated beta instance for beta projects",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850049",
+      "name": "Preview disclaimer",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Disclaimer in our official on-line product documentation and release notes that explains to our customers how Collibra positions a well-known concept like  Preview . Link to the  disclaimer .",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285004a",
+      "name": "Preview intake assessment",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A document that outlines preview project goals, tester requirements and enablement strategy among others that should be filled out by the Product Manager in order to kick off the preview program planning.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285004b",
+      "name": "Preview kick-off webinar",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The live introduction of a preview program to users, normally hosted by the Product Manager.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285004c",
+      "name": "Preview Program Manager",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A professional who is responsible for managing and coordinating preview (beta) projects and initiatives across a company.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285004d",
+      "name": "Preview Project Phase",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A distinct stage within a test plan in Centercode used to validate a set of features through specific scenarios and activities, while the develop continues on other features. Some preview programs have multiple phases while others have just one.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "6ccf3d44-42a7-41e0-be74-b7f85bf922e5",
+      "name": "Private Preview (Beta)",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A  Private Preview  - aka closed beta - is a feature only released to a restricted group of customers. This validation program is mostly suitable for the products / features that are capable of delivering value, but are not ready to be used by everyone either due to scaling issues, lack of documentation or still missing vital features. The customers participating in a private beta can report any bugs that they find, and sometimes suggest additional features they think should be available in the final GA version through a dedicated (private) platform called  Centercode , facilitated by the Collibra Customer Validation Manager. To conduct a Private Preview, these steps must be followed:  Conduct a Private Preview Multiple teams in the organization can benefit from Private Beta Programs: Product : validating whether the product solved customers problems and laying out their roadmap for future product iterations Engineering:  the engineering team is receiving a prioritised list of issues to fix on a constant basis QA : building a testing community helps augment their efforts to validate the release across more environments User Research & Experience:  can identify problem areas or areas of opportunity to do further experience research with the results Support:  can benefit from being able to plan responses to issues that are discovered but can’t be addressed before launch Sales and Marketing:  benefit through testimonials and quotes (Praise tickets)",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285004f",
+      "name": "Private Preview (Beta) Program",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A testing initiative where the Collibra Product team invites a selected group of users to evaluate a pre-release version of a product and share their feedback via preview.collibra.com.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850050",
+      "name": "Product Manager",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A person who defines the long-term vision and strategy for products and communicates it to internal teams. In the world of preview/beta testing, they are responsible for leading the validation project.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850051",
+      "name": "Prototype",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "An initial version of a feature created to test its value. It can be delivered for example via Figma link and shared in Centercode for feedback collection as past of a preview program.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850052",
+      "name": "Public Preview",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Public previews are released to all customers however, hidden behind a customer-controlled feature configuration. That gives the customer the ability to turn it on/off directly. Testing among a wide user base helps bring to light obscure errors that a much smaller testing team might not find.  Public Preview still highlight that the feature / product is not yet 100% finalized from a feature completeness point of view and therefore needs to be used with care. Users can report any bug that they find, and sometimes suggest improvements, through public channels. (support.collibra.com or ideas.collibra.com). Exceptionally, some might also ran via the preview platform, if the Product Manager wishes to engage directly with users and ask for specific feedback.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "833c87a3-9818-4fd6-95b2-85958e5ecfdc",
+      "name": "Public Preview (Beta) Disclaimer",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The Public Preview Disclaimer is a disclaimer in our official on-line product documentation and release notes, that explains to our customers how Collibra positions a well-known concept like preview / beta. Link to the  Public Preview Disclaimer  in our on-line doc.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850053",
+      "name": "Qualitative Research",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The collection and analysis of non-numerical data concerned with understanding or observing behaviors.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850054",
+      "name": "Quantitative Research",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The collection and analysis of numerical data to make predictions or generalize results for a larger group.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850055",
+      "name": "Satisfaction Scores",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A five-star rating used to capture user sentiment about each feature/activity via preview.collibra.com that can signal a need for deeper feedback.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850056",
+      "name": "Technical preview",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Unsupported release of a product, solution, prototype or even set of clickable mockups. A tech preview is not (yet) part of the product, and it can not be sold. An example of this is are some  Marketplace Community Offerings .",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850057",
+      "name": "Tester",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A member of your target market or an employee who has been onboarded into an active user test in preview.collibra.com.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850058",
+      "name": "Tester Impact Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The aggregated value of all project feedback from an individual, revealing the influence that person has had on a product. This can be consulted in the project dashboard in preview.collibra.com.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c91312850059",
+      "name": "Tester Recruitment",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The process of bringing qualified participants into your preview program.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285005a",
+      "name": "Usability Score",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Scores the combination of ease of use and needs met by a product or feature. In the world of preview programs, it is retrieved via the final survey. From the survey we take two questions:  1. is this feature meeting your needs? + 2. was this feature easy to use?.  The survey results on those two questions is a rating scale from 1 to 7. The formula is  ((Ease of use -1)+(Met my needs-1))*(100/12)",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285005b",
+      "name": "Usage Behavior",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "The patterns, habits, and actions of individuals when interacting with a software application or system.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285005c",
+      "name": "User Benchmarks",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "Measurements used to gauge the performance of a product or service against one or more comparable products.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "0198c234-11fe-73ff-be9b-c9131285005d",
+      "name": "User Research",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "A discipline of learning from customers by studying their interactions with products or experiences.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    },
+    {
+      "id": "07d18765-7a37-47c0-9eca-36bb6c5796f4",
+      "name": "User Seat",
+      "type": "Business Term",
+      "status": "Candidate",
+      "definition": "User seats are the user accounts in Centercode that are not testers (Members). These will be project managers and members of the triage team for every project.",
+      "description": "",
+      "synonyms": [],
+      "attributes": {}
+    }
+  ],
+  "measures": [
+    {
+      "id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "name": "Active Tester Flag",
+      "type": "Measure",
+      "status": "Candidate",
+      "definition": "A tester is considered  active  if they meet at least one of these criteria: Submitted 3 or more feedback tickets Completed 2 or more surveys Completed more than half of their assigned activities (i.e. completed activities outnumber the sum of incomplete, blocked, and opted-out ones)",
+      "description": "",
+      "attributes": {}
+    },
+    {
+      "id": "019cad91-d326-75ad-8859-d677a10007f4",
+      "name": "Most active participant",
+      "type": "Measure",
+      "status": "Candidate",
+      "definition": "Identifies the participant with the most consistent engagement across a preview program period, rewarding breadth of contribution over dominance in a single area. Formula / Business Logic: Each participant is independently ranked on  Feedback Tickets Submitted  (most to least) and  Activities Completed  (most to least). The two ranks are summed into a combined rank. The participant with the lowest combined rank is the Most Active Participant. Ties in the combined rank are resolved by whichever participant ranks higher on Feedback Tickets Submitted.",
+      "description": "",
+      "attributes": {}
+    },
+    {
+      "id": "019cc2bd-2896-7513-9138-f90da20b18f6",
+      "name": "Number of activities completed",
+      "type": "Measure",
+      "status": "Candidate",
+      "definition": "The total number of activities completed by a participant within the measurement period, aggregated across all projects created during that period. Sourced from the participant metrics table and summed at the participant level.",
+      "description": "",
+      "attributes": {}
+    },
+    {
+      "id": "019c9f86-9cc0-7143-8fa6-2de7c9d58bb4",
+      "name": "Number of ticket per participant",
+      "type": "Measure",
+      "status": "Candidate",
+      "definition": "The total number of distinct feedback tickets submitted by a participant within the measurement period, aggregated across all projects created during that period. Counted at the participant level using unique ticket identifiers.",
+      "description": "",
+      "attributes": {}
+    }
+  ],
+  "logical_assets": [
+    {
+      "id": "019caf48-d13c-7364-9153-a18564f4d8cd",
+      "name": "Account ID",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Unique system identifier for the overarching user account."
+    },
+    {
+      "id": "019caf49-45f1-75ef-af5e-6b1d56ee7ade",
+      "name": "Account Name",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "The designated name or label for the overarching user account."
+    },
+    {
+      "id": "019caf48-12c0-7242-a86f-c05f053f31db",
+      "name": "Accounts",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "This table contains the overarching account-level information, such as unique account identifiers and names, used to group users under specific parent entities."
+    },
+    {
+      "id": "019c9f6b-998f-73c3-b647-7610aa1653c9",
+      "name": "Active Tester",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Define whether a participant is consider an active tester or not."
+    },
+    {
+      "id": "019c9e6f-79e9-7033-92dd-5d54ce25d765",
+      "name": "Activity",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "Tasks or scenarios within a project designed to guide participants in exploring and engaging with product features."
+    },
+    {
+      "id": "019c9e75-4704-70d3-a88e-ae1318a491b7",
+      "name": "Engagement Status",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Current engagement status: Viewed, Unengaged, or Completed."
+    },
+    {
+      "id": "019c9e75-4b35-7601-9bf1-77d5c9931a87",
+      "name": "First Activity Date",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "First date the participant had an engaged status (not Unengaged or Not Applicable) for this activity."
+    },
+    {
+      "id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "name": "Name",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Name of the activity (e.g., a survey name)."
+    },
+    {
+      "id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "name": "Centercode logical data layer",
+      "type": "Data Model",
+      "definition": "",
+      "description": "Centercode logical data layer"
+    },
+    {
+      "id": "019caf4a-d8be-7025-8864-b0cc006218f6",
+      "name": "Email Address",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "A secure, cryptographic hash of the participant's email address, used to join records across tables without exposing raw PII."
+    },
+    {
+      "id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "name": "Feedback Ticket",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "A unified record of all feedback submitted by participants, categorized into issues, ideas, praise, and discussions."
+    },
+    {
+      "id": "019c9e75-5807-7710-9487-ae4f7722c452",
+      "name": "Date Created",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Date the ticket was originally created."
+    },
+    {
+      "id": "019c9e75-5a66-728d-b23e-b703dc0e2b00",
+      "name": "Importance Score",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Severity or importance score of the ticket."
+    },
+    {
+      "id": "019c9e75-5d62-7346-bd62-a79e8873b7ef",
+      "name": "Occurrences",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of times this issue has been reported."
+    },
+    {
+      "id": "019c9e75-5f8c-75b3-8eea-c6f91423a482",
+      "name": "Submitter Name",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Full name of the person who submitted the ticket."
+    },
+    {
+      "id": "019c9e75-61f8-753f-aff1-ccd54f1a7f2a",
+      "name": "Ticket ID",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Unique identifier for the ticket."
+    },
+    {
+      "id": "019c9e75-63bf-746b-b45b-a0e1fa6ae35d",
+      "name": "Ticket Status",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Current status of the ticket (e.g., New, Under Review)."
+    },
+    {
+      "id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "name": "Ticket Type",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Type of feedback ticket: 'issue', 'idea', 'praise', or 'discussion'."
+    },
+    {
+      "id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "name": "Participant",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "An individual who is actively involved in a Centercode project, providing feedback and engaging with activities."
+    },
+    {
+      "id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "name": "Blocked Activities",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of activities the participant has blocked."
+    },
+    {
+      "id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "name": "Completed Activities",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of activities the participant has completed."
+    },
+    {
+      "id": "019c9e75-7738-76e0-ab59-07ef768dc851",
+      "name": "Completed Surveys",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of surveys the participant has completed."
+    },
+    {
+      "id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "name": "Email Address",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Email address of the participant."
+    },
+    {
+      "id": "019c9e75-7b8c-705a-9999-73795dcd1ca5",
+      "name": "Email Domain",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Domain name of the participant's email address."
+    },
+    {
+      "id": "019c9e75-7e63-7091-abed-da2c01b2a53e",
+      "name": "Impact Score",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Score reflecting the participant's overall impact on the project, based on their contributions and engagement."
+    },
+    {
+      "id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "name": "Incomplete Activities",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of activities the participant has started but not finished."
+    },
+    {
+      "id": "019c9e75-aeb4-7433-85f0-c454a6c63d64",
+      "name": "Items Followed",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of items the participant is following."
+    },
+    {
+      "id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "name": "Opted Out Activities",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of activities the participant has opted out of."
+    },
+    {
+      "id": "019c9e75-e05a-760e-817a-f93d037a88fa",
+      "name": "Teams",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "A comma-separated list of project teams the participant belongs to."
+    },
+    {
+      "id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "name": "Project",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "A Centercode Project represents a specific preview or Early Adopters program designed to gather feedback on new products or features. These projects are private and managed by a Preview Program Manager and Product Manager."
+    },
+    {
+      "id": "019c9e76-13bb-7382-894d-fc30c1f09b31",
+      "name": "Archive Date",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Date when the project was archived."
+    },
+    {
+      "id": "019c9e76-196a-7574-8f6d-6561bbe8a7c7",
+      "name": "Creation Date",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Date when the project was created."
+    },
+    {
+      "id": "019c9e76-1da8-70cb-b78b-f8ca467879be",
+      "name": "Success Score",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Centercode project health score since the last update, indicating how well the project is running."
+    },
+    {
+      "id": "019c9e76-3077-7187-84b2-b1812872ee3c",
+      "name": "Last Updated Date",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "The date on which the project data was last updated or refreshed."
+    },
+    {
+      "id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "name": "Name",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "The name of the project."
+    },
+    {
+      "id": "019c9e76-64f7-7642-8efa-539f855e295f",
+      "name": "Resolved Discussions",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of discussions resolved for the project."
+    },
+    {
+      "id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "name": "Resolved Feedback Tickets",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Total number of feedback tickets resolved within the project."
+    },
+    {
+      "id": "019c9e76-75dd-7280-8712-22ecfc0f97c0",
+      "name": "Resolved Ideas",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of ideas resolved for the project."
+    },
+    {
+      "id": "019c9e76-78a8-708d-963e-c2cc0e60f9e7",
+      "name": "Resolved Issues",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of issues resolved for the project."
+    },
+    {
+      "id": "019c9e76-7d1e-7251-995e-f9e69109666e",
+      "name": "Resolved Praise",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of praise feedback resolved for the project."
+    },
+    {
+      "id": "019c9e76-8156-7276-8515-a7fa91c18d6b",
+      "name": "Status",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Indicates if the project is 'Ongoing' or 'Finished' based on its archive date."
+    },
+    {
+      "id": "019c9e6f-dd5d-7317-93f9-a0676bd6a8af",
+      "name": "Project Team",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "A specific team within a project that a participant belongs to."
+    },
+    {
+      "id": "019c9e76-a97d-71f9-b2f5-11ecb0103ac9",
+      "name": "Team Group",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "A single team the participant belongs to within the project."
+    },
+    {
+      "id": "019c9e76-8458-75ab-a7b7-28764c81719c",
+      "name": "Total Features",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of features associated with the project."
+    },
+    {
+      "id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "name": "Total Feedback Tickets",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Total number of feedback tickets submitted for the project, including discussions, ideas, issues, and praise."
+    },
+    {
+      "id": "019c9e76-9153-71c9-a9b9-15c926b4177b",
+      "name": "Total Phases",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Number of phases defined for the project."
+    },
+    {
+      "id": "019c9e76-9588-7472-a76b-937bbfba1494",
+      "name": "Total Survey Responses",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Total number of responses received for the project."
+    },
+    {
+      "id": "019c9e76-99d5-75c0-9a1d-882358b64971",
+      "name": "Total Surveys Given",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Total number of surveys given or sent for the project."
+    },
+    {
+      "id": "019c9e6f-e86a-72d5-953b-0b56bb491433",
+      "name": "Satisfaction Rating",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "Ratings provided by participants for specific questions or activities within a project, indicating their satisfaction level."
+    },
+    {
+      "id": "019c9e76-bbac-7295-9dad-d28d91cde256",
+      "name": "Feedback Date",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Date the feedback was provided."
+    },
+    {
+      "id": "019c9e76-c1ef-72e7-b4fc-a16bf401604b",
+      "name": "Rating Value",
+      "type": "Data Attribute",
+      "definition": "",
+      "description": "Satisfaction rating from 1 (lowest) to 5 (highest)."
+    },
+    {
+      "id": "019caf47-7369-716d-bd03-e1b0df185ac9",
+      "name": "Users",
+      "type": "Data Entity",
+      "definition": "",
+      "description": "This table contains users information such as email address, name, projects they are in and project teams they belong to."
+    }
+  ],
+  "physical_assets": [
+    {
+      "id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "name": "centercode",
+      "type": "Schema",
+      "definition": "",
+      "description": "centercode contains participant and feedback data from Centercode, Collibra's beta testing platform. It covers beta project metadata, participant engagement and team membership, activity completion status, satisfaction ratings, and all feedback tickets (issues, ideas, praise, and discussions)."
+    },
+    {
+      "id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "name": "zcc_act_stat",
+      "type": "Table",
+      "definition": "",
+      "description": "One row per participant per activity per project, showing their current engagement status. Includes two computed date fields that help track engagement timing."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81e",
+      "name": "Z_ACT_TYP",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the activity (e.g., a survey name)."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81f",
+      "name": "Z_ENG_ST",
+      "type": "Column",
+      "definition": "",
+      "description": "Current engagement status: Viewed, Unengaged, or Completed."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca81152b",
+      "name": "Z_FST_ACT_D",
+      "type": "Column",
+      "definition": "",
+      "description": "First date the participant had an engaged status (not Unengaged or Not Applicable) for this activity."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f5",
+      "name": "Z_PRJ_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier of the beta project."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca811530",
+      "name": "Z_PRJ_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the beta project."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81d",
+      "name": "Z_PRT_NM",
+      "type": "Column",
+      "definition": "",
+      "description": "Full name of the participant."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d61",
+      "name": "Z_SMTP_ADR",
+      "type": "Column",
+      "definition": "",
+      "description": "Email address of the participant."
+    },
+    {
+      "id": "019caf36-2af7-773d-9f56-3fd362a12dab",
+      "name": "zcc_knt_mstr",
+      "type": "Table",
+      "definition": "",
+      "description": "This table contains the overarching account-level information, such as unique account identifiers and names, used to group users under specific parent entities."
+    },
+    {
+      "id": "019caf36-2a8d-74a7-a4be-c081be175724",
+      "name": "Z_KNT_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique system identifier for the overarching user account."
+    },
+    {
+      "id": "019caf36-2a8d-74a7-a4be-c081be175727",
+      "name": "Z_KNT_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "The designated name or label for the overarching user account."
+    },
+    {
+      "id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "name": "zcc_prj_hdr",
+      "type": "Table",
+      "definition": "",
+      "description": "This table includes useful general projects information such as name, id, creation and archive date and count of total features, phases, survey responses and resolved feedback tickets."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce149148c",
+      "name": "Z_ARC_DAT",
+      "type": "Column",
+      "definition": "",
+      "description": "Date when the project was archived."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81b",
+      "name": "Z_CAL_DP",
+      "type": "Column",
+      "definition": "",
+      "description": "The date on which the project was last updated."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81c",
+      "name": "Z_CRT_DAT",
+      "type": "Column",
+      "definition": "",
+      "description": "Date when the project was created."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85fa",
+      "name": "Z_DSC_RES_C",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of discussions resolved for the project."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc55",
+      "name": "Z_FDB_RES_T",
+      "type": "Column",
+      "definition": "",
+      "description": "Total number of resolved feedback tickets for this project. Derived from the project feedback lifecycle and should be used with Z_FDB_TOT to compute project-level resolution rates."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc57",
+      "name": "Z_FDB_TOT",
+      "type": "Column",
+      "definition": "",
+      "description": "Total number of feedback tickets submitted for the project, including discussions, ideas, issues, praise."
+    },
+    {
+      "id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a1",
+      "name": "Z_FTR_CNT",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of features associated with the project."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce149148d",
+      "name": "Z_HLT_DTA",
+      "type": "Column",
+      "definition": "",
+      "description": "Delta Impact Score percentage at project level. A value of 100 corresponds to 100 percent target achievement. For threshold filtering, include boundary conditions when business wording implies it."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc54",
+      "name": "Z_IDN_RES_C",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of ideas resolved for the project."
+    },
+    {
+      "id": "019c9e21-5e54-719f-b960-8e939cf2505b",
+      "name": "Z_ISS_RES_C",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of issues resolved for the project."
+    },
+    {
+      "id": "019c9e21-5e5a-7487-b17d-b07fc0b94990",
+      "name": "Z_PHS_CNT",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of phases defined for the project."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d62",
+      "name": "Z_PRJ_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier of the project."
+    },
+    {
+      "id": "019c9e21-5e55-7655-a86f-5c14a73ac31a",
+      "name": "Z_PRJ_STAT",
+      "type": "Column",
+      "definition": "",
+      "description": "'Ongoing' if the project has not been archived, 'Finished' if it has an archive date."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce1491492",
+      "name": "Z_PRJ_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "The name of the project."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d67",
+      "name": "Z_PRZ_RES_C",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of praise feedback resolved for the project."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca81152c",
+      "name": "Z_SRV_GIV_T",
+      "type": "Column",
+      "definition": "",
+      "description": "Total number of surveys given or sent for the project."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce1491491",
+      "name": "Z_SRV_RES_T",
+      "type": "Column",
+      "definition": "",
+      "description": "Total number of responses received for the project."
+    },
+    {
+      "id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "name": "zcc_prt_mtrc",
+      "type": "Table",
+      "definition": "",
+      "description": "One row per participant per project with their latest engagement metrics — activity completion counts, survey completions, followed items, and impact score."
+    },
+    {
+      "id": "019c9e21-5e5a-7487-b17d-b07fc0b94991",
+      "name": "Z_ACT_BLK",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of activities the participant has blocked."
+    },
+    {
+      "id": "019c9e21-5e55-7655-a86f-5c14a73ac318",
+      "name": "Z_ACT_CMP",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of activities the participant has completed."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d64",
+      "name": "Z_ACT_INC",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of activities the participant has started but not finished."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca81152e",
+      "name": "Z_ACT_OPT",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of activities the participant has opted out of."
+    },
+    {
+      "id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a2",
+      "name": "Z_CAL_DP",
+      "type": "Column",
+      "definition": "",
+      "description": "Date the data was last refreshed."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc56",
+      "name": "Z_FLW_MENGE",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of items the participant is following."
+    },
+    {
+      "id": "019c9e21-5e5a-7487-b17d-b07fc0b9498f",
+      "name": "Z_PRJ_OID",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier for the project."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc3",
+      "name": "Z_PRJ_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the project."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d66",
+      "name": "Z_PRT_NM",
+      "type": "Column",
+      "definition": "",
+      "description": "Full name of the participant."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc7",
+      "name": "Z_PTM_LST",
+      "type": "Column",
+      "definition": "",
+      "description": "Comma-separated list of project teams the participant belongs to. See project_teams table for the normalized version."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc4",
+      "name": "Z_SMTP_ADR",
+      "type": "Column",
+      "definition": "",
+      "description": "Email address of the participant."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce149148b",
+      "name": "Z_SMTP_DOM",
+      "type": "Column",
+      "definition": "",
+      "description": "Domain name of the participant's email address."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc6",
+      "name": "Z_SRV_CMP",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of surveys the participant has completed."
+    },
+    {
+      "id": "019c9e21-5e59-7741-afc4-c0e0d60bf69f",
+      "name": "Z_USR_IMP",
+      "type": "Column",
+      "definition": "",
+      "description": "Participant-level aggregate impact metric. This is not per-ticket impact. Use zcc_tkt_itm.Z_IMP_SC for individual feedback ticket impact scores."
+    },
+    {
+      "id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "name": "zcc_ptm_lnk",
+      "type": "Table",
+      "definition": "",
+      "description": "One row per participant per team per project. Normalized version of the project_teams field from the participants table — each team membership is its own row."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f8",
+      "name": "Z_CAL_DP",
+      "type": "Column",
+      "definition": "",
+      "description": "Date the data was last refreshed."
+    },
+    {
+      "id": "019c9e21-5e5a-7487-b17d-b07fc0b94992",
+      "name": "Z_PRJ_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier for the project."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca81152f",
+      "name": "Z_PRT_NM",
+      "type": "Column",
+      "definition": "",
+      "description": "Full name of the participant."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc5",
+      "name": "Z_PTM_GRP",
+      "type": "Column",
+      "definition": "",
+      "description": "A single team the participant belongs to within the project."
+    },
+    {
+      "id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a3",
+      "name": "Z_SMTP_ADR",
+      "type": "Column",
+      "definition": "",
+      "description": "Email address of the participant."
+    },
+    {
+      "id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "name": "zcc_qa_sat",
+      "type": "Table",
+      "definition": "",
+      "description": "This table shows the satisfaction ratings (from 1.0 to 5.0) provided by participants to each question/activity of the different beta projects."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f9",
+      "name": "Z_ACT_TYP",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the activity being rated (e.g., a survey name)."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca811531",
+      "name": "Z_CAL_DP",
+      "type": "Column",
+      "definition": "",
+      "description": "Date the feedback was provided, used for partitioning and analysis."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f7",
+      "name": "Z_PRJ_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier for the beta project."
+    },
+    {
+      "id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a0",
+      "name": "Z_PRJ_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the beta project that the participant provided feedback on."
+    },
+    {
+      "id": "019c9e21-5e5b-7209-81ef-546bca81152d",
+      "name": "Z_PRT_NM",
+      "type": "Column",
+      "definition": "",
+      "description": "Full name of the participant who provided feedback."
+    },
+    {
+      "id": "019c9e21-5e57-71ab-956e-32c18d9b8cc8",
+      "name": "Z_RTG_VAL",
+      "type": "Column",
+      "definition": "",
+      "description": "Satisfaction rating from 1 (lowest) to 5 (highest)."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc53",
+      "name": "Z_SMTP_ADR",
+      "type": "Column",
+      "definition": "",
+      "description": "Email address of the participant who provided feedback."
+    },
+    {
+      "id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "name": "zcc_tkt_itm",
+      "type": "Table",
+      "definition": "",
+      "description": "Unified table of all feedback tickets across all four types: issues, ideas, praise, and discussions. Use the ticket_type column to filter to a specific type."
+    },
+    {
+      "id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f6",
+      "name": "Z_CAL_DP",
+      "type": "Column",
+      "definition": "",
+      "description": "Date the data was last refreshed."
+    },
+    {
+      "id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81a",
+      "name": "Z_ERDAT",
+      "type": "Column",
+      "definition": "",
+      "description": "Date the ticket was originally created."
+    },
+    {
+      "id": "019c9e21-5e55-7655-a86f-5c14a73ac317",
+      "name": "Z_IMP_SC",
+      "type": "Column",
+      "definition": "",
+      "description": "Impact score assigned to an individual feedback ticket. Use this column for per-ticket impact analysis and ticket-level ranking."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d65",
+      "name": "Z_OCC_MNG",
+      "type": "Column",
+      "definition": "",
+      "description": "Number of times this issue has been reported."
+    },
+    {
+      "id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d63",
+      "name": "Z_PRJ_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier for the project the ticket belongs to."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce1491490",
+      "name": "Z_PRJ_TXT",
+      "type": "Column",
+      "definition": "",
+      "description": "Name of the project."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce149148e",
+      "name": "Z_SBM_NM",
+      "type": "Column",
+      "definition": "",
+      "description": "Full name of the person who submitted the ticket."
+    },
+    {
+      "id": "019c9e21-5e55-7655-a86f-5c14a73ac319",
+      "name": "Z_SMTP_ADR",
+      "type": "Column",
+      "definition": "",
+      "description": "Email address of the person who submitted the ticket."
+    },
+    {
+      "id": "019c9e21-5e56-71de-b8a5-94da865cfc58",
+      "name": "Z_TKT_ART",
+      "type": "Column",
+      "definition": "",
+      "description": "Type of feedback ticket: 'issue', 'idea', 'praise', or 'discussion'."
+    },
+    {
+      "id": "019c9e21-5e5a-7487-b17d-b07fc0b94993",
+      "name": "Z_TKT_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique identifier for the ticket."
+    },
+    {
+      "id": "019c9e21-5e5e-715d-b778-e13ce149148f",
+      "name": "Z_TKT_ST",
+      "type": "Column",
+      "definition": "",
+      "description": "Current status of the ticket (e.g., New, Under Review)."
+    },
+    {
+      "id": "019caf36-2af8-7489-9e54-2dec10fb8f80",
+      "name": "zcc_usr_mstr",
+      "type": "Table",
+      "definition": "",
+      "description": "This table contains users information such as email address, name, projects they are in and project teams they belong to."
+    },
+    {
+      "id": "019caf36-2a8d-74a7-a4be-c081be175725",
+      "name": "Z_KNT_NR",
+      "type": "Column",
+      "definition": "",
+      "description": "Unique system identifier for the overarching user account."
+    },
+    {
+      "id": "019caf36-2a8d-74a7-a4be-c081be175726",
+      "name": "Z_SMTP_HSH",
+      "type": "Column",
+      "definition": "",
+      "description": "A secure, cryptographic hash of the participant's email address, used to join records across tables without exposing raw PII."
+    }
+  ],
+  "relations": [
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c947a",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce1491490",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_PRJ_TXT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e1e",
+      "type": "",
+      "source_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "source_name": "Project.Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce1491490",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_PRJ_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9463",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca81152d",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_PRT_NM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-bcbe-7034-a56b-ec793104d076",
+      "type": "",
+      "source_id": "019c9e76-bbac-7295-9dad-d28d91cde256",
+      "source_name": "Satisfaction Rating.Feedback Date",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5b-7209-81ef-546bca811531",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_CAL_DP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-bcbe-7034-a56b-ec793104d078",
+      "type": "",
+      "source_id": "019c9e6f-e86a-72d5-953b-0b56bb491433",
+      "source_name": "Satisfaction Rating",
+      "source_domain": "",
+      "target_id": "019c9e76-bbac-7295-9dad-d28d91cde256",
+      "target_name": "Satisfaction Rating.Feedback Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9476",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce149148c",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_ARC_DAT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-1447-7659-a55d-4c7474950065",
+      "type": "",
+      "source_id": "019c9e76-13bb-7382-894d-fc30c1f09b31",
+      "source_name": "Project.Archive Date",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce149148c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_ARC_DAT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-9182-7161-b008-1e2a0cb54dfc",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285004d",
+      "source_name": "Preview Project Phase",
+      "source_domain": "",
+      "target_id": "019c9e76-9153-71c9-a9b9-15c926b4177b",
+      "target_name": "Project.Total Phases",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4bb9-764a-8085-d60e372e67cd",
+      "type": "",
+      "source_id": "019c9e75-4b35-7601-9bf1-77d5c9931a87",
+      "source_name": "Activity.First Engagement Date",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5b-7209-81ef-546bca81152b",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_FST_ACT_D(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4bb8-773e-afeb-3c02eab6934e",
+      "type": "",
+      "source_id": "019c9e6f-79e9-7033-92dd-5d54ce25d765",
+      "source_name": "Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-4b35-7601-9bf1-77d5c9931a87",
+      "target_name": "Activity.First Engagement Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f64-35a0-74ad-b4c3-80dc2deb7fe1",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-4b35-7601-9bf1-77d5c9931a87",
+      "target_name": "Activity.First Engagement Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f64-35a0-74ad-b4c3-80dc2deb7fe3",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "source_name": "Activities",
+      "source_domain": "",
+      "target_id": "019c9e75-4b35-7601-9bf1-77d5c9931a87",
+      "target_name": "Activity.First Engagement Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9451",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f5",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_PRJ_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944f",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc7",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PTM_LST(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-e0b5-71d0-9484-2b05e3968b31",
+      "type": "",
+      "source_id": "019c9e75-e05a-760e-817a-f93d037a88fa",
+      "source_name": "Participant.Teams",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc7",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PTM_LST(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9471",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81c",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_CRT_DAT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-19cb-72d2-95f2-9cae088cd576",
+      "type": "",
+      "source_id": "019c9e76-196a-7574-8f6d-6561bbe8a7c7",
+      "source_name": "Project.Creation Date",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_CRT_DAT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857b",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944d",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc5",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_PTM_GRP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9454",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f8",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_CAL_DP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945b",
+      "type": "",
+      "source_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a3",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_SMTP_ADR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945f",
+      "type": "",
+      "source_id": "019c9e21-5e5a-7487-b17d-b07fc0b94992",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_PRJ_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9465",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca81152f",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_PRT_NM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c430",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf51-4839-7656-bcd4-7b8ce456b97d",
+      "type": "",
+      "source_id": "019caf4a-d8be-7025-8864-b0cc006218f6",
+      "source_name": "Email Adress",
+      "source_domain": "",
+      "target_id": "019caf36-2a8d-74a7-a4be-c081be175726",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr>Z_SMTP_HSH(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf4a-d928-7613-8b23-b53f18d98e67",
+      "type": "",
+      "source_id": "019caf47-7369-716d-bd03-e1b0df185ac9",
+      "source_name": "Users",
+      "source_domain": "",
+      "target_id": "019caf4a-d8be-7025-8864-b0cc006218f6",
+      "target_name": "Email Adress",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9475",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce149148b",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SMTP_DOM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7cdf-73fd-b1a4-77d25f5e8111",
+      "type": "",
+      "source_id": "019c9e75-7b8c-705a-9999-73795dcd1ca5",
+      "source_name": "Participant.Email Domain",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce149148b",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SMTP_DOM(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946c",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d65",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_OCC_MNG(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5dc5-76f8-94d9-a08105fbbf19",
+      "type": "",
+      "source_id": "019c9e75-5d62-7346-bd62-a79e8873b7ef",
+      "source_name": "Feedback Ticket.Occurrences Managed",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d65",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_OCC_MNG(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9446",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc54",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_IDN_RES_C(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-765b-75b2-9c58-1948dbf78ef2",
+      "type": "",
+      "source_id": "019c9e76-75dd-7280-8712-22ecfc0f97c0",
+      "source_name": "Project.Resolved Ideas",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc54",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_IDN_RES_C(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf49-e960-7009-9e12-05992a1f14c4",
+      "type": "",
+      "source_id": "019caf49-45f1-75ef-af5e-6b1d56ee7ade",
+      "source_name": "Account Name",
+      "source_domain": "",
+      "target_id": "019caf36-2a8d-74a7-a4be-c081be175727",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr>Z_KNT_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf49-465b-71f9-92cb-25bae5a90b9f",
+      "type": "",
+      "source_id": "019caf48-12c0-7242-a86f-c05f053f31db",
+      "source_name": "Accounts",
+      "source_domain": "",
+      "target_id": "019caf49-45f1-75ef-af5e-6b1d56ee7ade",
+      "target_name": "Account Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf4a-23f6-7701-b74f-bc8b58d68ac6",
+      "type": "",
+      "source_id": "019caf46-919a-7386-9dde-330b687cea1a",
+      "source_name": "Customer",
+      "source_domain": "",
+      "target_id": "019caf49-45f1-75ef-af5e-6b1d56ee7ade",
+      "target_name": "Account Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944c",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc4",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SMTP_ADR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed29a",
+      "type": "",
+      "source_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "source_name": "Participant.Email Address",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc4",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SMTP_ADR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946b",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d64",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_INC(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-8065-733c-8270-b8498dddb198",
+      "type": "",
+      "source_id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "source_name": "Participant.Incomplete Activities",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d64",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_INC(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f51-7538-a84a-d0a8cf04aba5",
+      "type": "",
+      "source_id": "019c9e21-5e55-7655-a86f-5c14a73ac319",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_SMTP_ADR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed2a0",
+      "type": "",
+      "source_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "source_name": "Participant.Email Address",
+      "source_domain": "",
+      "target_id": "019c9e21-5e55-7655-a86f-5c14a73ac319",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_SMTP_ADR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-a47d-772b-864b-af7ed8dd1cd6",
+      "type": "",
+      "source_id": "019caf36-2a8d-74a7-a4be-c081be175726",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr>Z_SMTP_HSH(column)",
+      "source_domain": "",
+      "target_id": "019caf36-2af8-7489-9e54-2dec10fb8f80",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9455",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f9",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_ACT_TYP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4e85-7271-a50e-85429e90c0ec",
+      "type": "",
+      "source_id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "source_name": "Activity.Type",
+      "source_domain": "",
+      "target_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f9",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_ACT_TYP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f51-7538-a84a-d0a8cf04aba3",
+      "type": "",
+      "source_id": "019c9e21-5e55-7655-a86f-5c14a73ac317",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_IMP_SC(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ad4-7440-95c7-63274cc56233",
+      "type": "",
+      "source_id": "019c9e75-5a66-728d-b23e-b703dc0e2b00",
+      "source_name": "Feedback Ticket.Importance Score",
+      "source_domain": "",
+      "target_id": "019c9e21-5e55-7655-a86f-5c14a73ac317",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_IMP_SC(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019cada4-fdca-70ce-998d-ddf1da230e11",
+      "type": "",
+      "source_id": "019cada4-9bb1-77b5-b386-98d180279766",
+      "source_name": "Occurence Score",
+      "source_domain": "",
+      "target_id": "019c9e75-5d62-7346-bd62-a79e8873b7ef",
+      "target_name": "Feedback Ticket.Occurrences Managed",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f51-7538-a84a-d0a8cf04aba2",
+      "type": "",
+      "source_id": "019c9e21-5e54-719f-b960-8e939cf2505b",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_ISS_RES_C(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7922-76cd-9316-f0c070231943",
+      "type": "",
+      "source_id": "019c9e76-78a8-708d-963e-c2cc0e60f9e7",
+      "source_name": "Project.Resolved Issues",
+      "source_domain": "",
+      "target_id": "019c9e21-5e54-719f-b960-8e939cf2505b",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_ISS_RES_C(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6256-7283-b75c-c1476bad493d",
+      "type": "",
+      "source_id": "019c9e75-61f8-753f-aff1-ccd54f1a7f2a",
+      "source_name": "Feedback Ticket.Ticket ID",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5a-7487-b17d-b07fc0b94993",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_NR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6256-7283-b75c-c1476bad4939",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-61f8-753f-aff1-ccd54f1a7f2a",
+      "target_name": "Feedback Ticket.Ticket ID",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f88-a1ad-7776-b939-f8d7936a76e1",
+      "type": "",
+      "source_id": "019c9f86-9cc0-7143-8fa6-2de7c9d58bb4",
+      "source_name": "Number of ticket per participant",
+      "source_domain": "",
+      "target_id": "019c9e75-61f8-753f-aff1-ccd54f1a7f2a",
+      "target_name": "Feedback Ticket.Ticket ID",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6529-74f1-8261-020080c7f8ba",
+      "type": "",
+      "source_id": "019c9e76-64f7-7642-8efa-539f855e295f",
+      "source_name": "Project.Resolved Discussions",
+      "source_domain": "",
+      "target_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85fa",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_DSC_RES_C(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6528-76a9-990b-92cfa7609bce",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003c",
+      "source_name": "Discussion",
+      "source_domain": "",
+      "target_id": "019c9e76-64f7-7642-8efa-539f855e295f",
+      "target_name": "Project.Resolved Discussions",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6529-74f1-8261-020080c7f8b8",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-64f7-7642-8efa-539f855e295f",
+      "target_name": "Project.Resolved Discussions",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed29e",
+      "type": "",
+      "source_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "source_name": "Participant.Email Address",
+      "source_domain": "",
+      "target_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a3",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_SMTP_ADR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857f",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9445",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc53",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_SMTP_ADR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9450",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc8",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_RTG_VAL(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9453",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f7",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_PRJ_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9458",
+      "type": "",
+      "source_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a0",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_PRJ_TXT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9467",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca811531",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_CAL_DP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c434",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-95b7-765a-9375-d6cc7514ee45",
+      "type": "",
+      "source_id": "019c9e76-9588-7472-a76b-937bbfba1494",
+      "source_name": "Project.Total Survey Responses",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce1491491",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_SRV_RES_T(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-95b7-765a-9375-d6cc7514ee43",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-9588-7472-a76b-937bbfba1494",
+      "target_name": "Project.Total Survey Responses",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5dc5-76f8-94d9-a08105fbbf17",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-5d62-7346-bd62-a79e8873b7ef",
+      "target_name": "Feedback Ticket.Occurrences Managed",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9456",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85fa",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_DSC_RES_C(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857a",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857c",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857d",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5e81-75e3-a787-7a6c9178857e",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-2b12-72dd-b40b-74a59faa17f5",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019caf36-2af7-773d-9f56-3fd362a12dab",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-2b12-72dd-b40b-74a59faa17f6",
+      "type": "",
+      "source_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode",
+      "source_domain": "",
+      "target_id": "019caf36-2af8-7489-9e54-2dec10fb8f80",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5c8e-738e-a188-a538564e5869",
+      "type": "",
+      "source_id": "019c9ad9-a893-7709-b889-7518389b369a",
+      "source_name": "Databricks JDBC>hackathon_2026",
+      "source_domain": "",
+      "target_id": "019c9e21-5b0c-7200-8da0-6792000e7d03",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9460",
+      "type": "",
+      "source_id": "019c9e21-5e5a-7487-b17d-b07fc0b94993",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6e-26d8-70da-bbef-5c2461f6b7eb",
+      "type": "",
+      "source_id": "019c9ad9-382e-7119-a34b-5f370a4c42b8",
+      "source_name": "Databricks",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-7a9a-75c8-a140-50b3a39bb902",
+      "type": "",
+      "source_id": "019c9e6f-79e9-7033-92dd-5d54ce25d765",
+      "source_name": "Activity",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-b75c-7367-b78f-e21d776af460",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-c56b-75f1-81f5-bec8f200385c",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-d37b-738d-8aba-8771767d2cab",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-ddfa-765e-a526-24daac52d4c6",
+      "type": "",
+      "source_id": "019c9e6f-dd5d-7317-93f9-a0676bd6a8af",
+      "source_name": "Project Team",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e6f-e905-7325-b0c4-3d132baac7e5",
+      "type": "",
+      "source_id": "019c9e6f-e86a-72d5-953b-0b56bb491433",
+      "source_name": "Satisfaction Rating",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf47-73e4-74c0-9d81-999caf7ef3be",
+      "type": "",
+      "source_id": "019caf47-7369-716d-bd03-e1b0df185ac9",
+      "source_name": "Users",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf48-1307-74cb-b591-394856493310",
+      "type": "",
+      "source_id": "019caf48-12c0-7242-a86f-c05f053f31db",
+      "source_name": "Accounts",
+      "source_domain": "",
+      "target_id": "019c9e6e-2674-755f-b482-1a67d71bb874",
+      "target_name": "Centercode logical data layer",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ad4-7440-95c7-63274cc5622f",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-5a66-728d-b23e-b703dc0e2b00",
+      "target_name": "Feedback Ticket.Importance Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ad4-7440-95c7-63274cc56231",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850040",
+      "source_name": "Feedback Impact Score",
+      "source_domain": "",
+      "target_id": "019c9e75-5a66-728d-b23e-b703dc0e2b00",
+      "target_name": "Feedback Ticket.Importance Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-c26a-71c4-93f5-5b427037d7e9",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850055",
+      "source_name": "Satisfaction Scores",
+      "source_domain": "",
+      "target_id": "019c9e76-c1ef-72e7-b4fc-a16bf401604b",
+      "target_name": "Satisfaction Rating.Rating Value",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5876-744d-9178-ba43eeca3607",
+      "type": "",
+      "source_id": "019c9e75-5807-7710-9487-ae4f7722c452",
+      "source_name": "Feedback Ticket.Date Created",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81a",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_ERDAT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5876-744d-9178-ba43eeca3605",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-5807-7710-9487-ae4f7722c452",
+      "target_name": "Feedback Ticket.Date Created",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f88-a1ad-7776-b939-f8d7936a76e3",
+      "type": "",
+      "source_id": "019c9f86-9cc0-7143-8fa6-2de7c9d58bb4",
+      "source_name": "Number of ticket per participant",
+      "source_domain": "",
+      "target_id": "019c9e75-5f8c-75b3-8eea-c6f91423a482",
+      "target_name": "Feedback Ticket.Submitter Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f8a-86b9-7781-b4a6-3a2232f5d934",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9f86-9cc0-7143-8fa6-2de7c9d58bb4",
+      "target_name": "Number of ticket per participant",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9448",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc56",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_FLW_MENGE(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-b044-75c9-8b11-1f99b5e90797",
+      "type": "",
+      "source_id": "019c9e75-aeb4-7433-85f0-c454a6c63d64",
+      "source_name": "Participant.Items Followed",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc56",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_FLW_MENGE(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf49-ba84-7595-834d-e73425719005",
+      "type": "",
+      "source_id": "019caf48-d13c-7364-9153-a18564f4d8cd",
+      "source_name": "Account ID",
+      "source_domain": "",
+      "target_id": "019caf36-2a8d-74a7-a4be-c081be175724",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr>Z_KNT_NR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf48-d1b1-704f-9207-ccdf56acec3d",
+      "type": "",
+      "source_id": "019caf48-12c0-7242-a86f-c05f053f31db",
+      "source_name": "Accounts",
+      "source_domain": "",
+      "target_id": "019caf48-d13c-7364-9153-a18564f4d8cd",
+      "target_name": "Account ID",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf4a-5e90-722c-aeb0-3d79997db081",
+      "type": "",
+      "source_id": "019caf46-919a-7386-9dde-330b687cea1a",
+      "source_name": "Customer",
+      "source_domain": "",
+      "target_id": "019caf48-d13c-7364-9153-a18564f4d8cd",
+      "target_name": "Account ID",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7ec7-7525-b9bc-222b1b919147",
+      "type": "",
+      "source_id": "019c9e75-7e63-7091-abed-da2c01b2a53e",
+      "source_name": "Participant.Impact Score",
+      "source_domain": "",
+      "target_id": "019c9e21-5e59-7741-afc4-c0e0d60bf69f",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_USR_IMP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7ec7-7525-b9bc-222b1b919143",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850058",
+      "source_name": "Tester Impact Score",
+      "source_domain": "",
+      "target_id": "019c9e75-7e63-7091-abed-da2c01b2a53e",
+      "target_name": "Participant.Impact Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7ec7-7525-b9bc-222b1b919145",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-7e63-7091-abed-da2c01b2a53e",
+      "target_name": "Participant.Impact Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-a9ac-7488-9a8a-0f8262d6aef1",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850036",
+      "source_name": "Centercode Project",
+      "source_domain": "",
+      "target_id": "019c9e76-a97d-71f9-b2f5-11ecb0103ac9",
+      "target_name": "Project Team.Team Group",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4e85-7271-a50e-85429e90c0ea",
+      "type": "",
+      "source_id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "source_name": "Activity.Type",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81e",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_ACT_TYP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4e85-7271-a50e-85429e90c0e8",
+      "type": "",
+      "source_id": "019c9e6f-79e9-7033-92dd-5d54ce25d765",
+      "source_name": "Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "target_name": "Activity.Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-4e85-7271-a50e-85429e90c0ee",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "target_name": "Activity.Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019cc2c1-3d06-7328-be78-14bb762a1f58",
+      "type": "",
+      "source_id": "019cc2bd-2896-7513-9138-f90da20b18f6",
+      "source_name": "Number of activities completed",
+      "source_domain": "",
+      "target_id": "019c9e75-4d99-760e-8340-d503e9c57e95",
+      "target_name": "Activity.Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b502047d",
+      "type": "",
+      "source_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "source_name": "Project.Resolved Feedback Tickets",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc55",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FDB_RES_T(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b5020473",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850043",
+      "source_name": "Ideas",
+      "source_domain": "",
+      "target_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "target_name": "Project.Resolved Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b5020475",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003c",
+      "source_name": "Discussion",
+      "source_domain": "",
+      "target_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "target_name": "Project.Resolved Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b5020477",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850045",
+      "source_name": "Issues",
+      "source_domain": "",
+      "target_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "target_name": "Project.Resolved Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b5020479",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850047",
+      "source_name": "Praise",
+      "source_domain": "",
+      "target_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "target_name": "Project.Resolved Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-69a6-755a-962d-1495b502047b",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-6938-7485-9239-84e9c97c9355",
+      "target_name": "Project.Resolved Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9444",
+      "type": "",
+      "source_id": "019c9e21-5e55-7655-a86f-5c14a73ac31a",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRJ_STAT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9447",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc55",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FDB_RES_T(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9449",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc57",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FDB_TOT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9459",
+      "type": "",
+      "source_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a1",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FTR_CNT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945d",
+      "type": "",
+      "source_id": "019c9e21-5e5a-7487-b17d-b07fc0b94990",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PHS_CNT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9462",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca81152c",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_SRV_GIV_T(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9469",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d62",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRJ_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946e",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d67",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRZ_RES_C(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9470",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81b",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_CAL_DP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9477",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce149148d",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_HLT_DTA(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c947b",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce1491491",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_SRV_RES_T(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c947c",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce1491492",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRJ_TXT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e50-71f4-9b4a-3529e20a3a9c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-a9ac-7488-9a8a-0f8262d6aeef",
+      "type": "",
+      "source_id": "019c9e76-a97d-71f9-b2f5-11ecb0103ac9",
+      "source_name": "Project Team.Team Group",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc5",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_ptm_lnk>Z_PTM_GRP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-a47c-748f-93dd-a3a17d1c3147",
+      "type": "",
+      "source_id": "019caf36-2a8d-74a7-a4be-c081be175724",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr>Z_KNT_NR(column)",
+      "source_domain": "",
+      "target_id": "019caf36-2af7-773d-9f56-3fd362a12dab",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-c26a-71c4-93f5-5b427037d7ed",
+      "type": "",
+      "source_id": "019c9e6f-e86a-72d5-953b-0b56bb491433",
+      "source_name": "Satisfaction Rating",
+      "source_domain": "",
+      "target_id": "019c9e76-c1ef-72e7-b4fc-a16bf401604b",
+      "target_name": "Satisfaction Rating.Rating Value",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-1447-7659-a55d-4c7474950063",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-13bb-7382-894d-fc30c1f09b31",
+      "target_name": "Project.Archive Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-19cb-72d2-95f2-9cae088cd574",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-196a-7574-8f6d-6561bbe8a7c7",
+      "target_name": "Project.Creation Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-1e1e-7528-9767-17066ffd8ed0",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-1da8-70cb-b78b-f8ca467879be",
+      "target_name": "Project.Health Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-30be-72a5-8429-b6485f094a7d",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-3077-7187-84b2-b1812872ee3c",
+      "target_name": "Project.Last Updated Date",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e18",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "target_name": "Project.Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-765b-75b2-9c58-1948dbf78ef0",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-75dd-7280-8712-22ecfc0f97c0",
+      "target_name": "Project.Resolved Ideas",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7922-76cd-9316-f0c070231941",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-78a8-708d-963e-c2cc0e60f9e7",
+      "target_name": "Project.Resolved Issues",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7d88-715c-a290-21d5430faf61",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-7d1e-7251-995e-f9e69109666e",
+      "target_name": "Project.Resolved Praise",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-81c6-72fb-900e-f8ab7891d5ee",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-8156-7276-8515-a7fa91c18d6b",
+      "target_name": "Project.Status",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-84bc-746c-870d-8f04224163ae",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-8458-75ab-a7b7-28764c81719c",
+      "target_name": "Project.Total Features",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04be",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-9182-7161-b008-1e2a0cb54dfe",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-9153-71c9-a9b9-15c926b4177b",
+      "target_name": "Project.Total Phases",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-9a02-738a-b535-10d8b0084c89",
+      "type": "",
+      "source_id": "019c9e6f-d2f2-707f-bdc5-dd3cfcbb4cee",
+      "source_name": "Project",
+      "source_domain": "",
+      "target_id": "019c9e76-99d5-75c0-9a1d-882358b64971",
+      "target_name": "Project.Total Surveys Given",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9461",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca81152b",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_FST_ACT_D(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-9a02-738a-b535-10d8b0084c8b",
+      "type": "",
+      "source_id": "019c9e76-99d5-75c0-9a1d-882358b64971",
+      "source_name": "Project.Total Surveys Given",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5b-7209-81ef-546bca81152c",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_SRV_GIV_T(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f51-7538-a84a-d0a8cf04aba4",
+      "type": "",
+      "source_id": "019c9e21-5e55-7655-a86f-5c14a73ac318",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_CMP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944b",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc3",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PRJ_TXT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944e",
+      "type": "",
+      "source_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc6",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SRV_CMP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9457",
+      "type": "",
+      "source_id": "019c9e21-5e59-7741-afc4-c0e0d60bf69f",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_USR_IMP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945a",
+      "type": "",
+      "source_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a2",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_CAL_DP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945c",
+      "type": "",
+      "source_id": "019c9e21-5e5a-7487-b17d-b07fc0b9498f",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PRJ_OID(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c945e",
+      "type": "",
+      "source_id": "019c9e21-5e5a-7487-b17d-b07fc0b94991",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_BLK(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9464",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca81152e",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_OPT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946d",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d66",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PRT_NM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c432",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7261-754f-bcc7-0023e33b3a4c",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "target_name": "Participant.Blocked Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-756d-77b1-b4bc-61fe31ad7221",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "target_name": "Participant.Completed Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-8065-733c-8270-b8498dddb194",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "target_name": "Participant.Incomplete Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-c9e9-77c8-9fa3-6eca9195f53b",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "target_name": "Participant.Opted Out Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-84bc-746c-870d-8f04224163aa",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850035",
+      "source_name": "Centercode Activity",
+      "source_domain": "",
+      "target_id": "019c9e76-8458-75ab-a7b7-28764c81719c",
+      "target_name": "Project.Total Features",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-a47d-772b-864b-af7ed8dd1cd5",
+      "type": "",
+      "source_id": "019caf36-2a8d-74a7-a4be-c081be175725",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr>Z_KNT_NR(column)",
+      "source_domain": "",
+      "target_id": "019caf36-2af8-7489-9e54-2dec10fb8f80",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_usr_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f83-3498-7048-b460-3424da38a80c",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "target_name": "Participant.Blocked Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f83-3499-75a9-b084-30112ea7a0e5",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "target_name": "Participant.Incomplete Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f83-3499-75a9-b084-30112ea7a0e7",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "target_name": "Participant.Opted Out Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f83-3499-75a9-b084-30112ea7a0e9",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "target_name": "Participant.Completed Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019cade9-47f3-7373-b0ec-4ff25287ab41",
+      "type": "",
+      "source_id": "019c9f78-2633-7377-9050-c1b3d84eb68d",
+      "source_name": "Active Tester Flag",
+      "source_domain": "",
+      "target_id": "019c9f6b-998f-73c3-b647-7610aa1653c9",
+      "target_name": "Active Tester",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e22",
+      "type": "",
+      "source_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "source_name": "Project.Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a0",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_PRJ_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9474",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81f",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_ENG_ST(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-47a0-7292-bf61-1899bfe0069c",
+      "type": "",
+      "source_id": "019c9e75-4704-70d3-a88e-ae1318a491b7",
+      "source_name": "Activity.Engagement Status",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81f",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_ENG_ST(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7d88-715c-a290-21d5430faf63",
+      "type": "",
+      "source_id": "019c9e76-7d1e-7251-995e-f9e69109666e",
+      "source_name": "Project.Resolved Praise",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d67",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRZ_RES_C(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7d88-715c-a290-21d5430faf5f",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850047",
+      "source_name": "Praise",
+      "source_domain": "",
+      "target_id": "019c9e76-7d1e-7251-995e-f9e69109666e",
+      "target_name": "Project.Resolved Praise",
+      "target_domain": ""
+    },
+    {
+      "id": "019caf36-a47d-772b-864b-af7ed8dd1cd7",
+      "type": "",
+      "source_id": "019caf36-2a8d-74a7-a4be-c081be175727",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr>Z_KNT_TXT(column)",
+      "source_domain": "",
+      "target_id": "019caf36-2af7-773d-9f56-3fd362a12dab",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_knt_mstr",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-30be-72a5-8429-b6485f094a7f",
+      "type": "",
+      "source_id": "019c9e76-3077-7187-84b2-b1812872ee3c",
+      "source_name": "Project.Last Updated Date",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81b",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_CAL_DP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-84bc-746c-870d-8f04224163ac",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003e",
+      "source_name": "Feature",
+      "source_domain": "",
+      "target_id": "019c9e76-8458-75ab-a7b7-28764c81719c",
+      "target_name": "Project.Total Features",
+      "target_domain": ""
+    },
+    {
+      "id": "019cc2c1-534b-7317-825d-f351db046d8c",
+      "type": "",
+      "source_id": "019cc2bd-2896-7513-9138-f90da20b18f6",
+      "source_name": "Number of activities completed",
+      "source_domain": "",
+      "target_id": "019c9e75-4704-70d3-a88e-ae1318a491b7",
+      "target_name": "Activity.Engagement Status",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed298",
+      "type": "",
+      "source_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "source_name": "Participant.Email Address",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc53",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_SMTP_ADR(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9466",
+      "type": "",
+      "source_id": "019c9e21-5e5b-7209-81ef-546bca811530",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_PRJ_TXT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9468",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d61",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_SMTP_ADR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9472",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81d",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_PRT_NM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9473",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81e",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_ACT_TYP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c433",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-756d-77b1-b4bc-61fe31ad7225",
+      "type": "",
+      "source_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "source_name": "Participant.Completed Activities",
+      "source_domain": "",
+      "target_id": "019c9e21-5e55-7655-a86f-5c14a73ac318",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_CMP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-756c-73d9-a26f-7a1bc1a15cde",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "source_name": "Activities",
+      "source_domain": "",
+      "target_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "target_name": "Participant.Completed Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-756d-77b1-b4bc-61fe31ad7223",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "target_name": "Participant.Completed Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019cad94-eea8-7150-bd35-4a8f144b8776",
+      "type": "",
+      "source_id": "019cad91-d326-75ad-8859-d677a10007f4",
+      "source_name": "Most active participant",
+      "source_domain": "",
+      "target_id": "019c9e75-74f8-7312-adbd-833c2c4d5a7c",
+      "target_name": "Participant.Completed Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7262-762a-83cb-ec3f4cbad6d0",
+      "type": "",
+      "source_id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "source_name": "Participant.Blocked Activities",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5a-7487-b17d-b07fc0b94991",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_BLK(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7261-754f-bcc7-0023e33b3a4a",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "source_name": "Activities",
+      "source_domain": "",
+      "target_id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "target_name": "Participant.Blocked Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7261-754f-bcc7-0023e33b3a4e",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-71f8-779c-8b56-a05c5903c1da",
+      "target_name": "Participant.Blocked Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9478",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce149148e",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_SBM_NM(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ff1-742b-8a70-b2c9fc844dcb",
+      "type": "",
+      "source_id": "019c9e75-5f8c-75b3-8eea-c6f91423a482",
+      "source_name": "Feedback Ticket.Submitter Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce149148e",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_SBM_NM(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019cae10-4482-7420-ad5c-ef96131de123",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003b",
+      "source_name": "Delta Success Score",
+      "source_domain": "",
+      "target_id": "019c9e76-1da8-70cb-b78b-f8ca467879be",
+      "target_name": "Project.Health Score",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ff1-742b-8a70-b2c9fc844dc9",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850057",
+      "source_name": "Tester",
+      "source_domain": "",
+      "target_id": "019c9e75-5f8c-75b3-8eea-c6f91423a482",
+      "target_name": "Feedback Ticket.Submitter Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019cadf2-2a8a-75e3-9209-5980596d1a92",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850031",
+      "source_name": "Active Tester",
+      "source_domain": "",
+      "target_id": "019c9f6b-998f-73c3-b647-7610aa1653c9",
+      "target_name": "Active Tester",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-47a0-7292-bf61-1899bfe0069a",
+      "type": "",
+      "source_id": "019c9e6f-79e9-7033-92dd-5d54ce25d765",
+      "source_name": "Activity",
+      "source_domain": "",
+      "target_id": "019c9e75-4704-70d3-a88e-ae1318a491b7",
+      "target_name": "Activity.Engagement Status",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9479",
+      "type": "",
+      "source_id": "019c9e21-5e5e-715d-b778-e13ce149148f",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_ST(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6451-711e-b99b-631463794a2e",
+      "type": "",
+      "source_id": "019c9e75-63bf-746b-b45b-a0e1fa6ae35d",
+      "source_name": "Feedback Ticket.Ticket Status",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce149148f",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_ST(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e1a",
+      "type": "",
+      "source_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "source_name": "Project.Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce1491492",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRJ_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e1c",
+      "type": "",
+      "source_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "source_name": "Project.Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc3",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_PRJ_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-6086-76c4-a36a-79a2ec650e20",
+      "type": "",
+      "source_id": "019c9e76-6053-76cf-b82c-49eda72df206",
+      "source_name": "Project.Name",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5b-7209-81ef-546bca811530",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_PRJ_TXT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-c9e9-77c8-9fa3-6eca9195f53f",
+      "type": "",
+      "source_id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "source_name": "Participant.Opted Out Activities",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5b-7209-81ef-546bca81152e",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_ACT_OPT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-c9e9-77c8-9fa3-6eca9195f539",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "source_name": "Activities",
+      "source_domain": "",
+      "target_id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "target_name": "Participant.Opted Out Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-c9e9-77c8-9fa3-6eca9195f53d",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-c907-73b5-9821-e166f6d632e8",
+      "target_name": "Participant.Opted Out Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-a9ac-7488-9a8a-0f8262d6aeed",
+      "type": "",
+      "source_id": "019c9e6f-dd5d-7317-93f9-a0676bd6a8af",
+      "source_name": "Project Team",
+      "source_domain": "",
+      "target_id": "019c9e76-a97d-71f9-b2f5-11ecb0103ac9",
+      "target_name": "Project Team.Team Group",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-5ff1-742b-8a70-b2c9fc844dc7",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-5f8c-75b3-8eea-c6f91423a482",
+      "target_name": "Feedback Ticket.Submitter Name",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-1e1e-7528-9767-17066ffd8ed2",
+      "type": "",
+      "source_id": "019c9e76-1da8-70cb-b78b-f8ca467879be",
+      "source_name": "Project.Health Score",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5e-715d-b778-e13ce149148d",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_HLT_DTA(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-b044-75c9-8b11-1f99b5e90795",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-aeb4-7433-85f0-c454a6c63d64",
+      "target_name": "Participant.Items Followed",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-c26a-71c4-93f5-5b427037d7eb",
+      "type": "",
+      "source_id": "019c9e76-c1ef-72e7-b4fc-a16bf401604b",
+      "source_name": "Satisfaction Rating.Rating Value",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc8",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_qa_sat>Z_RTG_VAL(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f68-25d6-7246-b029-ae28835a2a42",
+      "type": "",
+      "source_id": "019c9f66-ef2e-73db-9e33-2e4e9559ecfd",
+      "source_name": "Activity Status",
+      "source_domain": "",
+      "target_id": "019c9e75-4704-70d3-a88e-ae1318a491b7",
+      "target_name": "Activity.Engagement Status",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e63",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850047",
+      "source_name": "Praise",
+      "source_domain": "",
+      "target_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "target_name": "Feedback Ticket.Ticket Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04bc",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850047",
+      "source_name": "Praise",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-9182-7161-b008-1e2a0cb54e00",
+      "type": "",
+      "source_id": "019c9e76-9153-71c9-a9b9-15c926b4177b",
+      "source_name": "Project.Total Phases",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5a-7487-b17d-b07fc0b94990",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PHS_CNT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-84bc-746c-870d-8f04224163b0",
+      "type": "",
+      "source_id": "019c9e76-8458-75ab-a7b7-28764c81719c",
+      "source_name": "Project.Total Features",
+      "source_domain": "",
+      "target_id": "019c9e21-5e59-7741-afc4-c0e0d60bf6a1",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FTR_CNT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c9452",
+      "type": "",
+      "source_id": "019c9e21-5e58-77ab-8d35-be9bc4ca85f6",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_CAL_DP(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-765b-75b2-9c58-1948dbf78eee",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850043",
+      "source_name": "Ideas",
+      "source_domain": "",
+      "target_id": "019c9e76-75dd-7280-8712-22ecfc0f97c0",
+      "target_name": "Project.Resolved Ideas",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-81c6-72fb-900e-f8ab7891d5f0",
+      "type": "",
+      "source_id": "019c9e76-8156-7276-8515-a7fa91c18d6b",
+      "source_name": "Project.Status",
+      "source_domain": "",
+      "target_id": "019c9e21-5e55-7655-a86f-5c14a73ac31a",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_PRJ_STAT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04c0",
+      "type": "",
+      "source_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "source_name": "Project.Total Feedback Tickets",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc57",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prj_hdr>Z_FDB_TOT(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c944a",
+      "type": "",
+      "source_id": "019c9e21-5e56-71de-b8a5-94da865cfc58",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_ART(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946a",
+      "type": "",
+      "source_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d63",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_PRJ_NR(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e21-5f52-71bb-a09d-e5191f7c946f",
+      "type": "",
+      "source_id": "019c9e21-5e5d-779d-b78d-5bbeee4ba81a",
+      "source_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_ERDAT(column)",
+      "source_domain": "",
+      "target_id": "019c9e21-5e51-74ae-94e6-3f325815c431",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e5d",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850043",
+      "source_name": "Ideas",
+      "source_domain": "",
+      "target_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "target_name": "Feedback Ticket.Ticket Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04b6",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850043",
+      "source_name": "Ideas",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e61",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850045",
+      "source_name": "Issues",
+      "source_domain": "",
+      "target_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "target_name": "Feedback Ticket.Ticket Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-7922-76cd-9316-f0c07023193f",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850045",
+      "source_name": "Issues",
+      "source_domain": "",
+      "target_id": "019c9e76-78a8-708d-963e-c2cc0e60f9e7",
+      "target_name": "Project.Resolved Issues",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04ba",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850045",
+      "source_name": "Issues",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e76-88dd-7664-9adc-d5b15d2c04b8",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003c",
+      "source_name": "Discussion",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019cad94-eea8-7150-bd35-4a8f144b8778",
+      "type": "",
+      "source_id": "019cad91-d326-75ad-8859-d677a10007f4",
+      "source_name": "Most active participant",
+      "source_domain": "",
+      "target_id": "019c9e76-8879-739b-badd-ff8a28a60c92",
+      "target_name": "Project.Total Feedback Tickets",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e5f",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c9131285003c",
+      "source_name": "Discussion",
+      "source_domain": "",
+      "target_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "target_name": "Feedback Ticket.Ticket Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9f6b-9a08-70ff-b902-d7c796112bae",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9f6b-998f-73c3-b647-7610aa1653c9",
+      "target_name": "Active Tester",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e65",
+      "type": "",
+      "source_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "source_name": "Feedback Ticket.Ticket Type",
+      "source_domain": "",
+      "target_id": "019c9e21-5e56-71de-b8a5-94da865cfc58",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_tkt_itm>Z_TKT_ART(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7795-71ef-9c34-c72dc7247b8f",
+      "type": "",
+      "source_id": "019c9e75-7738-76e0-ab59-07ef768dc851",
+      "source_name": "Participant.Completed Surveys",
+      "source_domain": "",
+      "target_id": "019c9e21-5e57-71ab-956e-32c18d9b8cc6",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_prt_mtrc>Z_SRV_CMP(column)",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7795-71ef-9c34-c72dc7247b8d",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-7738-76e0-ab59-07ef768dc851",
+      "target_name": "Participant.Completed Surveys",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-e0b5-71d0-9484-2b05e3968b2f",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-e05a-760e-817a-f93d037a88fa",
+      "target_name": "Participant.Teams",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed296",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "target_name": "Participant.Email Address",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-7cdf-73fd-b1a4-77d25f5e810f",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-7b8c-705a-9999-73795dcd1ca5",
+      "target_name": "Participant.Email Domain",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-8065-733c-8270-b8498dddb196",
+      "type": "",
+      "source_id": "019c9e6f-c4dc-711e-a8fb-b8d330b09cab",
+      "source_name": "Participant",
+      "source_domain": "",
+      "target_id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "target_name": "Participant.Incomplete Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6451-711e-b99b-631463794a2c",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-63bf-746b-b45b-a0e1fa6ae35d",
+      "target_name": "Feedback Ticket.Ticket Status",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-6734-7160-a745-8e916ab96e5b",
+      "type": "",
+      "source_id": "019c9e6f-b6e3-7173-afcf-922eb2a2d5cd",
+      "source_name": "Feedback Ticket",
+      "source_domain": "",
+      "target_id": "019c9e75-66b2-7160-919f-3889648c6a52",
+      "target_name": "Feedback Ticket.Ticket Type",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-8065-733c-8270-b8498dddb192",
+      "type": "",
+      "source_id": "0198c234-11fe-73ff-be9b-c91312850032",
+      "source_name": "Activities",
+      "source_domain": "",
+      "target_id": "019c9e75-7fba-74d4-b7c9-9be84cf13f6d",
+      "target_name": "Participant.Incomplete Activities",
+      "target_domain": ""
+    },
+    {
+      "id": "019c9e75-79f7-772e-8949-4908250ed29c",
+      "type": "",
+      "source_id": "019c9e75-7991-74b4-b6d6-6ba8d901e20e",
+      "source_name": "Participant.Email Address",
+      "source_domain": "",
+      "target_id": "019c9e21-5e5c-71bb-b3f0-1aefe9da1d61",
+      "target_name": "Databricks JDBC>hackathon_2026>centercode>zcc_act_stat>Z_SMTP_ADR(column)",
+      "target_domain": ""
+    }
+  ],
+  "column_map": {
+    "zcc_act_stat.Z_ACT_TYP": {
+      "physical_name": "Z_ACT_TYP",
+      "physical_description": "Name of the activity (e.g., a survey name).",
+      "logical_name": "Name",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Number of activities completed",
+      "measure_definition": "The total number of activities completed by a participant within the measurement period, aggregated across all projects created during that period. Sourced from the participant metrics table and summed at the participant level.",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_ENG_ST": {
+      "physical_name": "Z_ENG_ST",
+      "physical_description": "Current engagement status: Viewed, Unengaged, or Completed.",
+      "logical_name": "Engagement Status",
+      "business_term": "Activity Status",
+      "business_definition": "the engagement status (Viewed, Unengaged, Completed) of participants for each activity of every beta project. Viewed, Not applicable, Completed, Blocked, Unengaged",
+      "measure_name": "Number of activities completed",
+      "measure_definition": "The total number of activities completed by a participant within the measurement period, aggregated across all projects created during that period. Sourced from the participant metrics table and summed at the participant level.",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_FST_ACT_D": {
+      "physical_name": "Z_FST_ACT_D",
+      "physical_description": "First date the participant had an engaged status (not Unengaged or Not Applicable) for this activity.",
+      "logical_name": "First Activity Date",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_PRJ_NR": {
+      "physical_name": "Z_PRJ_NR",
+      "physical_description": "Unique identifier of the beta project.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_PRJ_TXT": {
+      "physical_name": "Z_PRJ_TXT",
+      "physical_description": "Name of the beta project.",
+      "logical_name": "Name",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_PRT_NM": {
+      "physical_name": "Z_PRT_NM",
+      "physical_description": "Full name of the participant.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_act_stat.Z_SMTP_ADR": {
+      "physical_name": "Z_SMTP_ADR",
+      "physical_description": "Email address of the participant.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_act_stat"
+    },
+    "zcc_knt_mstr.Z_KNT_NR": {
+      "physical_name": "Z_KNT_NR",
+      "physical_description": "Unique system identifier for the overarching user account.",
+      "logical_name": "Account ID",
+      "business_term": "Customer",
+      "business_definition": "A “Customer” is a top-level account that has purchased a product or service directly or through one of their hierarchy from Collibra.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_knt_mstr"
+    },
+    "zcc_knt_mstr.Z_KNT_TXT": {
+      "physical_name": "Z_KNT_TXT",
+      "physical_description": "The designated name or label for the overarching user account.",
+      "logical_name": "Account Name",
+      "business_term": "Customer",
+      "business_definition": "A “Customer” is a top-level account that has purchased a product or service directly or through one of their hierarchy from Collibra.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_knt_mstr"
+    },
+    "zcc_prj_hdr.Z_ARC_DAT": {
+      "physical_name": "Z_ARC_DAT",
+      "physical_description": "Date when the project was archived.",
+      "logical_name": "Archive Date",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_CAL_DP": {
+      "physical_name": "Z_CAL_DP",
+      "physical_description": "The date on which the project was last updated.",
+      "logical_name": "Last Updated Date",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_CRT_DAT": {
+      "physical_name": "Z_CRT_DAT",
+      "physical_description": "Date when the project was created.",
+      "logical_name": "Creation Date",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_DSC_RES_C": {
+      "physical_name": "Z_DSC_RES_C",
+      "physical_description": "Number of discussions resolved for the project.",
+      "logical_name": "Resolved Discussions",
+      "business_term": "Discussion",
+      "business_definition": "Type of Feedback in preview.collibra.com designed to capture tester conversations and encourage ongoing interaction within a project. Just like Issues, Ideas, and Praise, Discussions are one of the standard Feedback Types. They’re commonly used to let testers talk with each other, share thoughts, and collaborate, all within the secure environment of your project. This helps create a strong sense of community, increases participant engagement, and allows for more robust reporting on tester conversations.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_FDB_RES_T": {
+      "physical_name": "Z_FDB_RES_T",
+      "physical_description": "Total number of resolved feedback tickets for this project. Derived from the project feedback lifecycle and should be used with Z_FDB_TOT to compute project-level resolution rates.",
+      "logical_name": "Resolved Feedback Tickets",
+      "business_term": "Ideas",
+      "business_definition": "A type of feedback that identifies feature additions or improvements that would elevate the user experience.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_FDB_TOT": {
+      "physical_name": "Z_FDB_TOT",
+      "physical_description": "Total number of feedback tickets submitted for the project, including discussions, ideas, issues, praise.",
+      "logical_name": "Total Feedback Tickets",
+      "business_term": "Praise",
+      "business_definition": "Feedback representing what is working well, what is delightful, or what users are satisfied with in a product.",
+      "measure_name": "Most active participant",
+      "measure_definition": "Identifies the participant with the most consistent engagement across a preview program period, rewarding breadth of contribution over dominance in a single area. Formula / Business Logic: Each participant is independently ranked on  Feedback Tickets Submitted  (most to least) and  Activities Completed  (most to least). The two ranks are summed into a combined rank. The participant with the lowest combined rank is the Most Active Participant. Ties in the combined rank are resolved by whichever participant ranks higher on Feedback Tickets Submitted.",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_FTR_CNT": {
+      "physical_name": "Z_FTR_CNT",
+      "physical_description": "Number of features associated with the project.",
+      "logical_name": "Total Features",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_HLT_DTA": {
+      "physical_name": "Z_HLT_DTA",
+      "physical_description": "Delta Impact Score percentage at project level. A value of 100 corresponds to 100 percent target achievement. For threshold filtering, include boundary conditions when business wording implies it.",
+      "logical_name": "Success Score",
+      "business_term": "Delta Success Score",
+      "business_definition": "A value that balances positive and negative feedback to show the overall achievement of your product in real time. It can be found in the Centercode project dashboard.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_IDN_RES_C": {
+      "physical_name": "Z_IDN_RES_C",
+      "physical_description": "Number of ideas resolved for the project.",
+      "logical_name": "Resolved Ideas",
+      "business_term": "Ideas",
+      "business_definition": "A type of feedback that identifies feature additions or improvements that would elevate the user experience.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_ISS_RES_C": {
+      "physical_name": "Z_ISS_RES_C",
+      "physical_description": "Number of issues resolved for the project.",
+      "logical_name": "Resolved Issues",
+      "business_term": "Issues",
+      "business_definition": "Feedback representing a quality, performance, or interoperability problem that has diminished a user's experience.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_PHS_CNT": {
+      "physical_name": "Z_PHS_CNT",
+      "physical_description": "Number of phases defined for the project.",
+      "logical_name": "Total Phases",
+      "business_term": "Preview Project Phase",
+      "business_definition": "A distinct stage within a test plan in Centercode used to validate a set of features through specific scenarios and activities, while the develop continues on other features. Some preview programs have multiple phases while others have just one.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_PRJ_NR": {
+      "physical_name": "Z_PRJ_NR",
+      "physical_description": "Unique identifier of the project.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_PRJ_STAT": {
+      "physical_name": "Z_PRJ_STAT",
+      "physical_description": "'Ongoing' if the project has not been archived, 'Finished' if it has an archive date.",
+      "logical_name": "Status",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_PRJ_TXT": {
+      "physical_name": "Z_PRJ_TXT",
+      "physical_description": "The name of the project.",
+      "logical_name": "Name",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_PRZ_RES_C": {
+      "physical_name": "Z_PRZ_RES_C",
+      "physical_description": "Number of praise feedback resolved for the project.",
+      "logical_name": "Resolved Praise",
+      "business_term": "Praise",
+      "business_definition": "Feedback representing what is working well, what is delightful, or what users are satisfied with in a product.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_SRV_GIV_T": {
+      "physical_name": "Z_SRV_GIV_T",
+      "physical_description": "Total number of surveys given or sent for the project.",
+      "logical_name": "Total Surveys Given",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prj_hdr.Z_SRV_RES_T": {
+      "physical_name": "Z_SRV_RES_T",
+      "physical_description": "Total number of responses received for the project.",
+      "logical_name": "Total Survey Responses",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prj_hdr"
+    },
+    "zcc_prt_mtrc.Z_ACT_BLK": {
+      "physical_name": "Z_ACT_BLK",
+      "physical_description": "Number of activities the participant has blocked.",
+      "logical_name": "Blocked Activities",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Active Tester Flag",
+      "measure_definition": "A tester is considered  active  if they meet at least one of these criteria: Submitted 3 or more feedback tickets Completed 2 or more surveys Completed more than half of their assigned activities (i.e. completed activities outnumber the sum of incomplete, blocked, and opted-out ones)",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_ACT_CMP": {
+      "physical_name": "Z_ACT_CMP",
+      "physical_description": "Number of activities the participant has completed.",
+      "logical_name": "Completed Activities",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Active Tester Flag",
+      "measure_definition": "A tester is considered  active  if they meet at least one of these criteria: Submitted 3 or more feedback tickets Completed 2 or more surveys Completed more than half of their assigned activities (i.e. completed activities outnumber the sum of incomplete, blocked, and opted-out ones)",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_ACT_INC": {
+      "physical_name": "Z_ACT_INC",
+      "physical_description": "Number of activities the participant has started but not finished.",
+      "logical_name": "Incomplete Activities",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Active Tester Flag",
+      "measure_definition": "A tester is considered  active  if they meet at least one of these criteria: Submitted 3 or more feedback tickets Completed 2 or more surveys Completed more than half of their assigned activities (i.e. completed activities outnumber the sum of incomplete, blocked, and opted-out ones)",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_ACT_OPT": {
+      "physical_name": "Z_ACT_OPT",
+      "physical_description": "Number of activities the participant has opted out of.",
+      "logical_name": "Opted Out Activities",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Active Tester Flag",
+      "measure_definition": "A tester is considered  active  if they meet at least one of these criteria: Submitted 3 or more feedback tickets Completed 2 or more surveys Completed more than half of their assigned activities (i.e. completed activities outnumber the sum of incomplete, blocked, and opted-out ones)",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_CAL_DP": {
+      "physical_name": "Z_CAL_DP",
+      "physical_description": "Date the data was last refreshed.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_FLW_MENGE": {
+      "physical_name": "Z_FLW_MENGE",
+      "physical_description": "Number of items the participant is following.",
+      "logical_name": "Items Followed",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_PRJ_OID": {
+      "physical_name": "Z_PRJ_OID",
+      "physical_description": "Unique identifier for the project.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_PRJ_TXT": {
+      "physical_name": "Z_PRJ_TXT",
+      "physical_description": "Name of the project.",
+      "logical_name": "Name",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_PRT_NM": {
+      "physical_name": "Z_PRT_NM",
+      "physical_description": "Full name of the participant.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_PTM_LST": {
+      "physical_name": "Z_PTM_LST",
+      "physical_description": "Comma-separated list of project teams the participant belongs to. See project_teams table for the normalized version.",
+      "logical_name": "Teams",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_SMTP_ADR": {
+      "physical_name": "Z_SMTP_ADR",
+      "physical_description": "Email address of the participant.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_SMTP_DOM": {
+      "physical_name": "Z_SMTP_DOM",
+      "physical_description": "Domain name of the participant's email address.",
+      "logical_name": "Email Domain",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_SRV_CMP": {
+      "physical_name": "Z_SRV_CMP",
+      "physical_description": "Number of surveys the participant has completed.",
+      "logical_name": "Completed Surveys",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_prt_mtrc.Z_USR_IMP": {
+      "physical_name": "Z_USR_IMP",
+      "physical_description": "Participant-level aggregate impact metric. This is not per-ticket impact. Use zcc_tkt_itm.Z_IMP_SC for individual feedback ticket impact scores.",
+      "logical_name": "Impact Score",
+      "business_term": "Tester Impact Score",
+      "business_definition": "The aggregated value of all project feedback from an individual, revealing the influence that person has had on a product. This can be consulted in the project dashboard in preview.collibra.com.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_prt_mtrc"
+    },
+    "zcc_ptm_lnk.Z_CAL_DP": {
+      "physical_name": "Z_CAL_DP",
+      "physical_description": "Date the data was last refreshed.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_ptm_lnk"
+    },
+    "zcc_ptm_lnk.Z_PRJ_NR": {
+      "physical_name": "Z_PRJ_NR",
+      "physical_description": "Unique identifier for the project.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_ptm_lnk"
+    },
+    "zcc_ptm_lnk.Z_PRT_NM": {
+      "physical_name": "Z_PRT_NM",
+      "physical_description": "Full name of the participant.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_ptm_lnk"
+    },
+    "zcc_ptm_lnk.Z_PTM_GRP": {
+      "physical_name": "Z_PTM_GRP",
+      "physical_description": "A single team the participant belongs to within the project.",
+      "logical_name": "Team Group",
+      "business_term": "Centercode Project",
+      "business_definition": "Within Centercode, the Preview Program Manager creates a 'Project' to manage individual preview or Early Adopters programs. These projects are inherently private, and only the Preview Program Manager and Product Manager can authorize access for qualifying participants.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_ptm_lnk"
+    },
+    "zcc_ptm_lnk.Z_SMTP_ADR": {
+      "physical_name": "Z_SMTP_ADR",
+      "physical_description": "Email address of the participant.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_ptm_lnk"
+    },
+    "zcc_qa_sat.Z_ACT_TYP": {
+      "physical_name": "Z_ACT_TYP",
+      "physical_description": "Name of the activity being rated (e.g., a survey name).",
+      "logical_name": "Name",
+      "business_term": "Centercode Activity",
+      "business_definition": "In Centercode, an 'Activity' is often referred to as a 'Feature'. Product Managers use activities to test specific scenarios of a new feature/product or to deliver essential setup steps. They are designed to facilitate a guided product tour and streamline feedback sharing. At the end of each activity, users are required to provide a star rating and are invited to open issue, idea, or praise tickets based on their experience.",
+      "measure_name": "Number of activities completed",
+      "measure_definition": "The total number of activities completed by a participant within the measurement period, aggregated across all projects created during that period. Sourced from the participant metrics table and summed at the participant level.",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_CAL_DP": {
+      "physical_name": "Z_CAL_DP",
+      "physical_description": "Date the feedback was provided, used for partitioning and analysis.",
+      "logical_name": "Feedback Date",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_PRJ_NR": {
+      "physical_name": "Z_PRJ_NR",
+      "physical_description": "Unique identifier for the beta project.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_PRJ_TXT": {
+      "physical_name": "Z_PRJ_TXT",
+      "physical_description": "Name of the beta project that the participant provided feedback on.",
+      "logical_name": "Name",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_PRT_NM": {
+      "physical_name": "Z_PRT_NM",
+      "physical_description": "Full name of the participant who provided feedback.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_RTG_VAL": {
+      "physical_name": "Z_RTG_VAL",
+      "physical_description": "Satisfaction rating from 1 (lowest) to 5 (highest).",
+      "logical_name": "Rating Value",
+      "business_term": "Satisfaction Scores",
+      "business_definition": "A five-star rating used to capture user sentiment about each feature/activity via preview.collibra.com that can signal a need for deeper feedback.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_qa_sat.Z_SMTP_ADR": {
+      "physical_name": "Z_SMTP_ADR",
+      "physical_description": "Email address of the participant who provided feedback.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_qa_sat"
+    },
+    "zcc_tkt_itm.Z_CAL_DP": {
+      "physical_name": "Z_CAL_DP",
+      "physical_description": "Date the data was last refreshed.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_ERDAT": {
+      "physical_name": "Z_ERDAT",
+      "physical_description": "Date the ticket was originally created.",
+      "logical_name": "Date Created",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_IMP_SC": {
+      "physical_name": "Z_IMP_SC",
+      "physical_description": "Impact score assigned to an individual feedback ticket. Use this column for per-ticket impact analysis and ticket-level ranking.",
+      "logical_name": "Importance Score",
+      "business_term": "Feedback Impact Score",
+      "business_definition": "A value automatically applied to incoming input that reflects its potential influence on product success. This can be found for each feedback ticket registered in Centercode. It's calculated by multiplying the \"weight\" (the importance or value assigned to a piece of feedback, like how critical or high-priority it is) by its \"popularity\" (how often testers report it, including the number of duplicates, votes, and comments). The higher the impact score, the greater the effect that feedback will have on your product's success.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_OCC_MNG": {
+      "physical_name": "Z_OCC_MNG",
+      "physical_description": "Number of times this issue has been reported.",
+      "logical_name": "Occurrences",
+      "business_term": "Occurence Score",
+      "business_definition": "The 'number of occurrences' in Centercode generally refers to how many times the same feedback issue, idea, or report has appeared within the system. This is often tracked through duplicate submissions, where multiple testers may report the same feedback",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_PRJ_NR": {
+      "physical_name": "Z_PRJ_NR",
+      "physical_description": "Unique identifier for the project the ticket belongs to.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_PRJ_TXT": {
+      "physical_name": "Z_PRJ_TXT",
+      "physical_description": "Name of the project.",
+      "logical_name": "Name",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_SBM_NM": {
+      "physical_name": "Z_SBM_NM",
+      "physical_description": "Full name of the person who submitted the ticket.",
+      "logical_name": "Submitter Name",
+      "business_term": "Tester",
+      "business_definition": "A member of your target market or an employee who has been onboarded into an active user test in preview.collibra.com.",
+      "measure_name": "Number of ticket per participant",
+      "measure_definition": "The total number of distinct feedback tickets submitted by a participant within the measurement period, aggregated across all projects created during that period. Counted at the participant level using unique ticket identifiers.",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_SMTP_ADR": {
+      "physical_name": "Z_SMTP_ADR",
+      "physical_description": "Email address of the person who submitted the ticket.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_TKT_ART": {
+      "physical_name": "Z_TKT_ART",
+      "physical_description": "Type of feedback ticket: 'issue', 'idea', 'praise', or 'discussion'.",
+      "logical_name": "Ticket Type",
+      "business_term": "Praise",
+      "business_definition": "Feedback representing what is working well, what is delightful, or what users are satisfied with in a product.",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_TKT_NR": {
+      "physical_name": "Z_TKT_NR",
+      "physical_description": "Unique identifier for the ticket.",
+      "logical_name": "Ticket ID",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "Number of ticket per participant",
+      "measure_definition": "The total number of distinct feedback tickets submitted by a participant within the measurement period, aggregated across all projects created during that period. Counted at the participant level using unique ticket identifiers.",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_tkt_itm.Z_TKT_ST": {
+      "physical_name": "Z_TKT_ST",
+      "physical_description": "Current status of the ticket (e.g., New, Under Review).",
+      "logical_name": "Ticket Status",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_tkt_itm"
+    },
+    "zcc_usr_mstr.Z_KNT_NR": {
+      "physical_name": "Z_KNT_NR",
+      "physical_description": "Unique system identifier for the overarching user account.",
+      "logical_name": "",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_usr_mstr"
+    },
+    "zcc_usr_mstr.Z_SMTP_HSH": {
+      "physical_name": "Z_SMTP_HSH",
+      "physical_description": "A secure, cryptographic hash of the participant's email address, used to join records across tables without exposing raw PII.",
+      "logical_name": "Email Address",
+      "business_term": "",
+      "business_definition": "",
+      "measure_name": "",
+      "measure_definition": "",
+      "table_name": "zcc_usr_mstr"
+    }
+  }
+}
