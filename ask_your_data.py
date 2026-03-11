@@ -108,6 +108,18 @@ def build_system_prompt(context: dict, table_schemas: dict) -> str:
     5. Return deterministic answers — same question = same answer.
     6. Show the SQL query you generated.
     7. Cite the governed definitions you used.
+     8. METRIC SCOPING RULES (MANDATORY):
+         - "Number of feedback tickets" MUST be COUNT(DISTINCT zcc_tkt_itm.Z_TKT_NR).
+         - Ticket leaderboards by project MUST join zcc_tkt_itm.Z_PRJ_NR = zcc_prj_hdr.Z_PRJ_NR.
+         - For project-level ranking, group by canonical name zcc_prj_hdr.Z_PRJ_TXT.
+         - NEVER use COUNT(*) when counting tickets.
+         - "Number of issues" means issue tickets only: LOWER(zcc_tkt_itm.Z_TKT_ART) = 'issue'.
+         - Issue counts MUST exclude not-applicable issues: LOWER(COALESCE(zcc_tkt_itm.Z_TKT_ST, '')) <> 'not applicable'.
+         - When scope is ongoing projects, only include projects with at least one participant (EXISTS in zcc_prt_mtrc).
+                 - Delta Impact Score uses zcc_prj_hdr.Z_HLT_DTA.
+                 - Active tester count must use governed criteria:
+                     feedback tickets >= 3 OR surveys >= 2 OR completed > (incomplete + blocked + opted-out).
+         - Only apply project status filters (Ongoing/Finished) if explicitly requested.
 
     RESPONSE FORMAT:
     📋 **Question Interpretation:**
@@ -167,15 +179,375 @@ def build_no_context_prompt(table_schemas: dict) -> str:
 
 # ── Query Pipeline ───────────────────────────────────────────────────
 
+def _extract_top_n(question: str, default: int = 10, max_value: int = 100) -> int:
+    """Extract requested Top-N from question text."""
+    match = re.search(r"\btop\s+(\d{1,3})\b", question, re.IGNORECASE)
+    if not match:
+        # Covers phrases like "5 projects" and "5 ongoing projects".
+        match = re.search(
+            r"\b(\d{1,3})\s+(?:(?:\w+\s+){0,3})?(?:projects?|programs?)\b",
+            question,
+            re.IGNORECASE,
+        )
+    if not match:
+        return default
+    return max(1, min(int(match.group(1)), max_value))
+
+
+def _build_feedback_ticket_leaderboard_sql(question: str) -> dict | None:
+    """
+    Build a deterministic SQL template for project leaderboard ticket questions.
+    Returns None if the question does not match this intent.
+    """
+    q = question.lower()
+    has_rank = any(k in q for k in ("top", "most", "highest", "leaderboard", "rank"))
+    has_project = any(k in q for k in ("project", "projects", "program", "programs"))
+    has_ticket = "ticket" in q
+    has_feedback = "feedback" in q
+
+    if not (has_rank and has_project and has_ticket and has_feedback):
+        return None
+
+    top_n = _extract_top_n(question, default=10)
+
+    status_filter = ""
+    scope_label = "All projects"
+    if any(k in q for k in ("ongoing", "active projects", "active programs")):
+        status_filter = "WHERE p.Z_PRJ_STAT = 'Ongoing'"
+        scope_label = "Ongoing projects only"
+    elif any(k in q for k in ("finished", "archived", "completed projects", "completed programs")):
+        status_filter = "WHERE p.Z_PRJ_STAT = 'Finished'"
+        scope_label = "Finished projects only"
+
+    sql_query = textwrap.dedent(f"""\
+    SELECT
+        p.Z_PRJ_TXT AS project_name,
+        COUNT(DISTINCT t.Z_TKT_NR) AS ticket_count
+    FROM zcc_tkt_itm t
+    JOIN zcc_prj_hdr p ON t.Z_PRJ_NR = p.Z_PRJ_NR
+    {status_filter}
+    GROUP BY p.Z_PRJ_TXT
+    ORDER BY ticket_count DESC
+    LIMIT {top_n};
+    """).strip()
+
+    return {
+        "sql_query": sql_query,
+        "scope_label": scope_label,
+        "top_n": top_n,
+    }
+
+
+def _build_feedback_ticket_template_response(question: str, sql_query: str, scope_label: str) -> str:
+    """Create a transparent response for deterministic scoped SQL execution."""
+    return textwrap.dedent(f"""\
+    📋 **Question Interpretation:**
+    Ranked project leaderboard by number of feedback tickets.
+
+    📚 **Governed Definitions Used:**
+    - Feedback tickets are counted with `COUNT(DISTINCT Z_TKT_NR)`.
+    - Project names are taken from `zcc_prj_hdr.Z_PRJ_TXT` after joining on project ID.
+    - Scope: {scope_label}
+
+    🔍 **SQL Query:**
+    ```sql
+    {sql_query}
+    ```
+
+    📊 **Answer:**
+    Returned the requested project leaderboard from governed ticket counting logic.
+
+    🔗 **Sources & Traceability:**
+    - `zcc_tkt_itm.Z_TKT_NR` (ticket identifier)
+    - `zcc_tkt_itm.Z_PRJ_NR` -> `zcc_prj_hdr.Z_PRJ_NR`
+    - `zcc_prj_hdr.Z_PRJ_TXT` (canonical project name)
+    """).strip()
+
+
+def _build_issue_leaderboard_sql(question: str) -> dict | None:
+    """
+    Build a deterministic SQL template for project leaderboard issue questions.
+    Returns None if the question does not match this intent.
+    """
+    q = question.lower()
+    has_rank = any(k in q for k in ("top", "most", "highest", "leaderboard", "rank"))
+    has_project = any(k in q for k in ("project", "projects", "program", "programs"))
+    has_issue = any(k in q for k in ("issue", "issues"))
+
+    # Keep this path specific to issue-based intent; feedback ticket path is handled separately.
+    if not (has_rank and has_project and has_issue):
+        return None
+
+    top_n = _extract_top_n(question, default=10)
+
+    where_clauses = [
+        "LOWER(t.Z_TKT_ART) = 'issue'",
+        "LOWER(COALESCE(t.Z_TKT_ST, '')) <> 'not applicable'",
+    ]
+    scope_label = "All projects"
+
+    if any(k in q for k in ("ongoing", "active projects", "active programs")):
+        where_clauses.append("p.Z_PRJ_STAT = 'Ongoing'")
+        where_clauses.append("EXISTS (SELECT 1 FROM zcc_prt_mtrc m WHERE m.Z_PRJ_OID = p.Z_PRJ_NR)")
+        scope_label = "Ongoing projects with participants"
+    elif any(k in q for k in ("finished", "archived", "completed projects", "completed programs")):
+        where_clauses.append("p.Z_PRJ_STAT = 'Finished'")
+        scope_label = "Finished projects only"
+
+    where_sql = "\nWHERE " + "\n  AND ".join(where_clauses)
+
+    sql_query = textwrap.dedent(f"""\
+    SELECT
+        p.Z_PRJ_TXT AS project_name,
+        COUNT(DISTINCT t.Z_TKT_NR) AS issue_total_count
+    FROM zcc_tkt_itm t
+    JOIN zcc_prj_hdr p ON t.Z_PRJ_NR = p.Z_PRJ_NR
+    {where_sql}
+    GROUP BY p.Z_PRJ_TXT
+    ORDER BY issue_total_count DESC
+    LIMIT {top_n};
+    """).strip()
+
+    return {
+        "sql_query": sql_query,
+        "scope_label": scope_label,
+        "top_n": top_n,
+    }
+
+
+def _build_issue_template_response(question: str, sql_query: str, scope_label: str) -> str:
+    """Create a transparent response for deterministic issue leaderboard execution."""
+    return textwrap.dedent(f"""\
+    📋 **Question Interpretation:**
+    Ranked project leaderboard by number of issues.
+
+    📚 **Governed Definitions Used:**
+    - Issues are counted from feedback tickets where `LOWER(Z_TKT_ART) = 'issue'`.
+    - Not-applicable issues are excluded with `LOWER(COALESCE(Z_TKT_ST, '')) <> 'not applicable'`.
+    - Ongoing scope requires projects that have participants in `zcc_prt_mtrc`.
+    - Scope: {scope_label}
+
+    🔍 **SQL Query:**
+    ```sql
+    {sql_query}
+    ```
+
+    📊 **Answer:**
+    Returned the requested project leaderboard from governed issue-counting logic.
+
+    🔗 **Sources & Traceability:**
+    - `zcc_tkt_itm.Z_TKT_ART`, `zcc_tkt_itm.Z_TKT_ST`, `zcc_tkt_itm.Z_TKT_NR`
+    - `zcc_tkt_itm.Z_PRJ_NR` -> `zcc_prj_hdr.Z_PRJ_NR`
+    - `zcc_prj_hdr.Z_PRJ_TXT`
+    - `zcc_prt_mtrc.Z_PRJ_OID` (participant existence for ongoing scope)
+    """).strip()
+
+
+def _extract_impact_score_min(question: str, default: int = 100) -> int:
+        """Extract minimum impact score threshold from question text."""
+        patterns = [
+                r"(?:delta\s+impact\s+score|impact\s+score)[^\d]{0,24}(?:over|above|greater than|at least|>=)\s*(\d{1,3})",
+                r"(?:over|above|greater than|at least|>=)\s*(\d{1,3})\s*%?\s*(?:delta\s+impact\s+score|impact\s+score)",
+        ]
+        for pattern in patterns:
+                match = re.search(pattern, question, re.IGNORECASE)
+                if match:
+                        return max(0, min(int(match.group(1)), 10000))
+        return default
+
+
+def _extract_active_tester_max(question: str, default: int = 20) -> int:
+        """Extract upper bound for active tester count from question text."""
+        patterns = [
+                r"(?:fewer than|less than|under|below)\s*(\d{1,3})\s+active\s+testers?",
+                r"active\s+testers?[^\d]{0,24}(?:fewer than|less than|under|below)\s*(\d{1,3})",
+                r"active\s+testers?\s*<\s*(\d{1,3})",
+        ]
+        for pattern in patterns:
+                match = re.search(pattern, question, re.IGNORECASE)
+                if match:
+                        return max(1, min(int(match.group(1)), 100000))
+        return default
+
+
+def _build_high_impact_low_active_sql(question: str) -> dict | None:
+        """
+        Build deterministic SQL for:
+        projects with high Delta Impact Score and low active tester count.
+        """
+        q = question.lower()
+        has_project = any(k in q for k in ("project", "projects", "program", "programs"))
+        has_impact = "impact score" in q or "delta impact" in q or "z_hlt_dta" in q
+        has_active = "active tester" in q or "active testers" in q
+
+        if not (has_project and has_impact and has_active):
+                return None
+
+        impact_min = _extract_impact_score_min(question, default=100)
+        active_max = _extract_active_tester_max(question, default=20)
+
+        sql_query = textwrap.dedent(f"""\
+        WITH feedback_completion AS (
+            SELECT
+                ft.Z_SMTP_ADR,
+                ft.Z_PRJ_NR,
+                COUNT(DISTINCT ft.Z_TKT_NR) AS feedback_ticket_count
+            FROM zcc_tkt_itm ft
+            GROUP BY ft.Z_SMTP_ADR, ft.Z_PRJ_NR
+        ),
+        participant_status AS (
+            SELECT
+                pa.Z_SMTP_ADR,
+                pa.Z_PRJ_OID,
+                pa.Z_PRJ_TXT,
+                CASE
+                    WHEN COALESCE(fc.feedback_ticket_count, 0) >= 3
+                        OR COALESCE(pa.Z_SRV_CMP, 0) >= 2
+                        OR COALESCE(pa.Z_ACT_CMP, 0) > COALESCE(pa.Z_ACT_INC, 0)
+                             + COALESCE(pa.Z_ACT_BLK, 0)
+                             + COALESCE(pa.Z_ACT_OPT, 0)
+                    THEN 1
+                    ELSE 0
+                END AS is_active_tester
+            FROM zcc_prt_mtrc pa
+            LEFT JOIN feedback_completion fc
+                ON pa.Z_SMTP_ADR = fc.Z_SMTP_ADR
+             AND pa.Z_PRJ_OID = fc.Z_PRJ_NR
+        )
+        SELECT
+            ps.Z_PRJ_OID,
+            ps.Z_PRJ_TXT,
+            pr.Z_HLT_DTA,
+            COUNT(DISTINCT CASE WHEN ps.is_active_tester = 1 THEN ps.Z_SMTP_ADR END) AS active_tester_count
+        FROM participant_status ps
+        JOIN zcc_prj_hdr pr
+            ON ps.Z_PRJ_OID = pr.Z_PRJ_NR
+        WHERE CAST(COALESCE(pr.Z_HLT_DTA, 0) AS REAL) >= {impact_min}
+        GROUP BY ps.Z_PRJ_OID, ps.Z_PRJ_TXT, pr.Z_HLT_DTA
+        HAVING COUNT(DISTINCT CASE WHEN ps.is_active_tester = 1 THEN ps.Z_SMTP_ADR END) < {active_max}
+        ORDER BY CAST(pr.Z_HLT_DTA AS REAL) DESC, active_tester_count ASC, ps.Z_PRJ_TXT;
+        """).strip()
+
+        return {
+                "sql_query": sql_query,
+                "impact_min": impact_min,
+                "active_max": active_max,
+        }
+
+
+def _build_high_impact_low_active_response(question: str, sql_query: str, impact_min: int, active_max: int) -> str:
+        """Create a transparent response for high-impact/low-active deterministic SQL."""
+        return textwrap.dedent(f"""\
+        📋 **Question Interpretation:**
+        List projects with Delta Impact Score >= {impact_min} and active tester count < {active_max}.
+
+        📚 **Governed Definitions Used:**
+        - Delta Impact Score from `zcc_prj_hdr.Z_HLT_DTA`.
+        - Active tester rule:
+            ticket_count >= 3 OR surveys >= 2 OR completed > (incomplete + blocked + opted-out).
+        - Active testers counted as distinct participants per project (`Z_SMTP_ADR`).
+
+        🔍 **SQL Query:**
+        ```sql
+        {sql_query}
+        ```
+
+        📊 **Answer:**
+        Returned projects meeting both impact and active-tester constraints.
+
+        🔗 **Sources & Traceability:**
+        - `zcc_prj_hdr.Z_HLT_DTA`
+        - `zcc_prt_mtrc.Z_SRV_CMP`, `Z_ACT_CMP`, `Z_ACT_INC`, `Z_ACT_BLK`, `Z_ACT_OPT`
+        - `zcc_tkt_itm.Z_TKT_NR`, `zcc_tkt_itm.Z_PRJ_NR`, `zcc_tkt_itm.Z_SMTP_ADR`
+        """).strip()
+
 def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
     """
     Answer a question WITH governed context (the 'after' / trustworthy path).
     """
     system_prompt = build_system_prompt(context, table_schemas)
 
+    # Deterministic shortcut for frequently used governed leaderboard queries.
+    high_impact_template = _build_high_impact_low_active_sql(question)
+    if high_impact_template:
+        sql_query = high_impact_template["sql_query"]
+        query_result = None
+        query_error = None
+        try:
+            result_df = execute_sql(sql_query)
+            query_result = result_df.to_dict(orient="records")
+        except Exception as e:
+            query_error = str(e)
+
+        return {
+            "mode": "with_context",
+            "execution_mode": "rulebook_sql",
+            "question": question,
+            "llm_response": _build_high_impact_low_active_response(
+                question,
+                sql_query,
+                high_impact_template["impact_min"],
+                high_impact_template["active_max"],
+            ),
+            "sql_query": sql_query,
+            "query_result": query_result,
+            "query_error": query_error,
+        }
+
+    issue_template = _build_issue_leaderboard_sql(question)
+    if issue_template:
+        sql_query = issue_template["sql_query"]
+        query_result = None
+        query_error = None
+        try:
+            result_df = execute_sql(sql_query)
+            query_result = result_df.to_dict(orient="records")
+        except Exception as e:
+            query_error = str(e)
+
+        return {
+            "mode": "with_context",
+            "execution_mode": "rulebook_sql",
+            "question": question,
+            "llm_response": _build_issue_template_response(
+                question,
+                sql_query,
+                issue_template["scope_label"],
+            ),
+            "sql_query": sql_query,
+            "query_result": query_result,
+            "query_error": query_error,
+        }
+
+    scoped_template = _build_feedback_ticket_leaderboard_sql(question)
+    if scoped_template:
+        sql_query = scoped_template["sql_query"]
+        query_result = None
+        query_error = None
+        try:
+            result_df = execute_sql(sql_query)
+            query_result = result_df.to_dict(orient="records")
+        except Exception as e:
+            query_error = str(e)
+
+        return {
+            "mode": "with_context",
+            "execution_mode": "rulebook_sql",
+            "question": question,
+            "llm_response": _build_feedback_ticket_template_response(
+                question,
+                sql_query,
+                scoped_template["scope_label"],
+            ),
+            "sql_query": sql_query,
+            "query_result": query_result,
+            "query_error": query_error,
+        }
+
     if not LLM_AVAILABLE:
         return {
             "mode": "with_context",
+            "execution_mode": "unavailable",
             "question": question,
             "error": "No LLM API key configured. Set ANTHROPIC_API_KEY in .env",
             "system_prompt_preview": system_prompt[:2000] + "...",
@@ -209,6 +581,7 @@ def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
 
     return {
         "mode": "with_context",
+        "execution_mode": "llm_sql",
         "question": question,
         "llm_response": llm_output,
         "sql_query": sql_query,
