@@ -119,6 +119,8 @@ def build_system_prompt(context: dict, table_schemas: dict) -> str:
                  - Delta Impact Score uses zcc_prj_hdr.Z_HLT_DTA.
                  - Active tester count must use governed criteria:
                      feedback tickets >= 3 OR surveys >= 2 OR completed > (incomplete + blocked + opted-out).
+                 - For "in ongoing programs" active tester questions, default grain is participant-program pairs
+                     (Z_SMTP_ADR + Z_PRJ_OID) unless the user explicitly asks for unique people.
          - Only apply project status filters (Ongoing/Finished) if explicitly requested.
 
     RESPONSE FORMAT:
@@ -461,6 +463,106 @@ def _build_high_impact_low_active_response(question: str, sql_query: str, impact
         - `zcc_tkt_itm.Z_TKT_NR`, `zcc_tkt_itm.Z_PRJ_NR`, `zcc_tkt_itm.Z_SMTP_ADR`
         """).strip()
 
+
+def _build_active_tester_count_sql(question: str) -> dict | None:
+        """
+        Build deterministic SQL for active tester count questions.
+        Returns both participant-program grain and unique-person grain for transparency.
+        """
+        q = question.lower()
+        has_active = "active tester" in q or "active testers" in q
+        has_count_intent = any(k in q for k in ("how many", "count", "number of", "total"))
+
+        if not (has_active and has_count_intent):
+                return None
+
+        ongoing_only = any(k in q for k in ("ongoing", "ongoing program", "ongoing programs", "ongoing project", "ongoing projects"))
+        finished_only = any(k in q for k in ("finished", "archived", "completed projects", "completed programs"))
+        unique_only = any(k in q for k in ("unique", "distinct", "different people", "unique people"))
+
+        status_filter = ""
+        scope_label = "All projects"
+        if ongoing_only:
+                status_filter = "WHERE ph.Z_PRJ_STAT = 'Ongoing'"
+                scope_label = "Ongoing programs"
+        elif finished_only:
+                status_filter = "WHERE ph.Z_PRJ_STAT = 'Finished'"
+                scope_label = "Finished programs"
+
+        sql_query = textwrap.dedent(f"""\
+        WITH feedback_completion AS (
+            SELECT
+                ft.Z_SMTP_ADR,
+                ft.Z_PRJ_NR,
+                COUNT(DISTINCT ft.Z_TKT_NR) AS feedback_ticket_count
+            FROM zcc_tkt_itm ft
+            GROUP BY ft.Z_SMTP_ADR, ft.Z_PRJ_NR
+        ),
+        participant_status AS (
+            SELECT
+                pm.Z_SMTP_ADR,
+                pm.Z_PRJ_OID,
+                CASE
+                    WHEN COALESCE(fc.feedback_ticket_count, 0) >= 3
+                        OR COALESCE(pm.Z_SRV_CMP, 0) >= 2
+                        OR COALESCE(pm.Z_ACT_CMP, 0) > COALESCE(pm.Z_ACT_INC, 0)
+                             + COALESCE(pm.Z_ACT_BLK, 0)
+                             + COALESCE(pm.Z_ACT_OPT, 0)
+                    THEN 1
+                    ELSE 0
+                END AS is_active_tester
+            FROM zcc_prt_mtrc pm
+            JOIN zcc_prj_hdr ph ON pm.Z_PRJ_OID = ph.Z_PRJ_NR
+            LEFT JOIN feedback_completion fc
+                ON pm.Z_SMTP_ADR = fc.Z_SMTP_ADR
+             AND pm.Z_PRJ_OID = fc.Z_PRJ_NR
+            {status_filter}
+        )
+        SELECT
+            COUNT(DISTINCT CASE WHEN is_active_tester = 1 THEN Z_SMTP_ADR || '|' || Z_PRJ_OID END) AS active_tester_participations,
+            COUNT(DISTINCT CASE WHEN is_active_tester = 1 THEN Z_SMTP_ADR END) AS unique_active_testers
+        FROM participant_status;
+        """).strip()
+
+        return {
+                "sql_query": sql_query,
+                "scope_label": scope_label,
+                "unique_only": unique_only,
+        }
+
+
+def _build_active_tester_count_response(sql_query: str, scope_label: str, unique_only: bool) -> str:
+        """Create a transparent response for deterministic active tester count execution."""
+        grain_note = (
+                "Unique people only requested; use `unique_active_testers`."
+                if unique_only
+                else "Default grain is participant-program pairs (`active_tester_participations`) for in-program questions."
+        )
+
+        return textwrap.dedent(f"""\
+        📋 **Question Interpretation:**
+        Count active testers using governed rules for scope: {scope_label}.
+
+        📚 **Governed Definitions Used:**
+        - Active tester rule: ticket_count >= 3 OR surveys >= 2 OR completed > (incomplete + blocked + opted-out).
+        - Returned both grains to avoid ambiguity:
+            - `active_tester_participations` (participant-program pairs)
+            - `unique_active_testers` (deduplicated people)
+
+        🔍 **SQL Query:**
+        ```sql
+        {sql_query}
+        ```
+
+        📊 **Answer:**
+        {grain_note}
+
+        🔗 **Sources & Traceability:**
+        - `zcc_prt_mtrc.Z_SMTP_ADR`, `Z_PRJ_OID`, `Z_SRV_CMP`, `Z_ACT_CMP`, `Z_ACT_INC`, `Z_ACT_BLK`, `Z_ACT_OPT`
+        - `zcc_tkt_itm.Z_TKT_NR`, `zcc_tkt_itm.Z_PRJ_NR`, `zcc_tkt_itm.Z_SMTP_ADR`
+        - `zcc_prj_hdr.Z_PRJ_NR`, `zcc_prj_hdr.Z_PRJ_STAT`
+        """).strip()
+
 def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
     """
     Answer a question WITH governed context (the 'after' / trustworthy path).
@@ -468,6 +570,31 @@ def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
     system_prompt = build_system_prompt(context, table_schemas)
 
     # Deterministic shortcut for frequently used governed leaderboard queries.
+    active_tester_template = _build_active_tester_count_sql(question)
+    if active_tester_template:
+        sql_query = active_tester_template["sql_query"]
+        query_result = None
+        query_error = None
+        try:
+            result_df = execute_sql(sql_query)
+            query_result = result_df.to_dict(orient="records")
+        except Exception as e:
+            query_error = str(e)
+
+        return {
+            "mode": "with_context",
+            "execution_mode": "rulebook_sql",
+            "question": question,
+            "llm_response": _build_active_tester_count_response(
+                sql_query,
+                active_tester_template["scope_label"],
+                active_tester_template["unique_only"],
+            ),
+            "sql_query": sql_query,
+            "query_result": query_result,
+            "query_error": query_error,
+        }
+
     high_impact_template = _build_high_impact_low_active_sql(question)
     if high_impact_template:
         sql_query = high_impact_template["sql_query"]
