@@ -5,6 +5,7 @@ Also provides a SQL interface via pandasql so the LLM-generated SQL can be execu
 """
 
 import os
+import json
 import delta_sharing
 import pandas as pd
 from dotenv import load_dotenv
@@ -30,11 +31,37 @@ TABLES = {
 _dataframes: dict[str, pd.DataFrame] = {}
 
 
+def _validate_profile_file(path: str) -> None:
+    """Validate Delta Sharing profile file to provide clear startup errors."""
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"Delta Sharing profile not found: {path}. "
+            "Set DELTA_SHARING_PROFILE to a valid file path."
+        )
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            parsed = json.load(f)
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"Delta Sharing profile is not valid JSON: {path}."
+        ) from exc
+
+    if not isinstance(parsed, dict):
+        raise ValueError(
+            "Delta Sharing profile JSON must be an object. "
+            "If you are deploying on Render, set DELTA_SHARING_CONFIG_JSON "
+            "to the full config.json content (not DELTA_SHARING_LIMIT like 10000)."
+        )
+
+
 def load_all_tables(limit: int = None) -> dict[str, pd.DataFrame]:
     """Load all hackathon tables into pandas DataFrames."""
     global _dataframes
     if _dataframes:
         return _dataframes
+
+    _validate_profile_file(PROFILE_PATH)
 
     effective_limit = limit or LIMIT
     print(f"📦 Loading tables from Databricks (limit={effective_limit or 'ALL'})...")
