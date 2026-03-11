@@ -173,7 +173,6 @@ main {
 .kpi-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* ── Ask Section ── */
-.ask-section { }
 .ask-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -286,6 +285,42 @@ main {
   background: rgba(255,255,255,0.02);
 }
 
+.chart-wrapper {
+  margin: 1.2rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(120,190,32,0.07);
+}
+
+.chart-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.chart-meta {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  height: 340px;
+  padding: 0.8rem 1rem 1rem;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -345,6 +380,11 @@ main {
 @media (max-width: 768px) {
   .data-table-wrapper {
     overflow-x: auto;
+  }
+
+  .chart-canvas-wrap {
+    height: 300px;
+    padding: 0.7rem;
   }
   
   .data-table {
@@ -456,7 +496,6 @@ main {
 .provenance strong { color: var(--text-dim); }
 
 /* ── Tables Section ── */
-.tables-section { }
 .section-title {
   font-size: 1.3rem; font-weight: 600; margin-bottom: 1.2rem;
   display: flex; align-items: center; gap: 0.6rem;

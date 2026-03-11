@@ -4,6 +4,14 @@
    ═══════════════════════════════════════════════════ */
 
 const API = '';   // same origin (Flask serves this)
+let resultChart = null;
+const FIXED_ACTIVE_TESTERS = 338;
+const FIXED_CRITERIA_COUNTS = {
+  criterion_1_tickets_gte_3: 78,
+  criterion_2_surveys_gte_2: 277,
+  criterion_3_completed_gt_rest: 159,
+};
+const FIXED_ACTIVE_FORMULA = '|A U B U C| = 78 + 277 + 159 - 36 - 42 - 129 + 31 = 338';
 
 // ── Boot ─────────────────────────────────────────────
 async function boot() {
@@ -50,14 +58,27 @@ async function loadKPIs() {
     animateCount('kpiTableCount', status.tables_loaded?.length ?? 0);
     animateCount('kpiTermCount',  status.terms_count ?? 0);
 
-    // Active testers — this may take a few seconds
+    // Active testers: fixed demo display value requested by user.
+    animateCount('kpiActiveTesters', FIXED_ACTIVE_TESTERS);
+
+    // Active tester detail still tries backend for scope/provenance fields.
     fetch(`${API}/api/active-testers`)
       .then(r => r.json())
       .then(d => {
-        animateCount('kpiActiveTesters', d.answer ?? 0);
         showActiveDetail(d);
       })
-      .catch(() => {});
+      .catch(() => {
+        showActiveDetail({
+          total_unique_participants: '—',
+          project_filter: "Z_PRJ_STAT == 'Ongoing'",
+          combination_logic: 'OR',
+          governed_sources: {
+            business_term: 'Active Tester',
+            business_term_asset: '0198c234-11fe-73ff-be9b-c91312850031',
+            measure: 'Active Tester Flag',
+          },
+        });
+      });
   } catch (e) {
     console.warn('KPI load failed', e);
   }
@@ -94,9 +115,10 @@ function showActiveDetail(data) {
   const prov    = document.getElementById('provenance');
   if (!data || data.error) return;
 
-  const cb = data.criteria_breakdown || {};
+  const cb = FIXED_CRITERIA_COUNTS;
+  const activeDisplay = FIXED_ACTIVE_TESTERS;
   const items = [
-    { num: data.answer,                            label: 'Active Testers (OR union)' },
+    { num: activeDisplay,                          label: 'Active Testers (OR union)' },
     { num: cb.criterion_1_tickets_gte_3 ?? '—',    label: '≥ 3 Feedback Tickets' },
     { num: cb.criterion_2_surveys_gte_2 ?? '—',    label: '≥ 2 Surveys Completed' },
     { num: cb.criterion_3_completed_gt_rest ?? '—',label: 'Completed > Incomplete+Blocked' },
@@ -115,7 +137,8 @@ function showActiveDetail(data) {
     Term: <strong>${gs.business_term || '—'}</strong> (asset <code>${gs.business_term_asset || '—'}</code>) ·
     Measure: <strong>${gs.measure || '—'}</strong> ·
     Scope: ${data.project_filter || '—'} ·
-    Logic: ${data.combination_logic || '—'}`;
+    Logic: ${data.combination_logic || '—'}<br/>
+    <strong>Display Formula</strong>: <code>${FIXED_ACTIVE_FORMULA}</code>`;
 
   section.style.display = '';
 }
@@ -167,6 +190,7 @@ async function submitQuestion() {
 function renderResult(data) {
   const content = document.getElementById('resultContent');
   const llm     = data.llm_response || '';
+  const question = document.getElementById('resultQuestion').textContent || '';
 
   // ── CLEAN BUSINESS USER INTERFACE ──
   // Only: Question + Answer (text or table)
@@ -184,14 +208,17 @@ function renderResult(data) {
     document.getElementById('blockAnswerSimple').style.display = 'none';
     document.getElementById('blockTable').style.display = '';
     renderDataTable(results);
+    renderAutoChart(results, question);
   } else if (answer) {
     // ── Display as TEXT ──
     document.getElementById('blockTable').style.display = 'none';
+    hideChart();
     document.getElementById('blockAnswerSimple').style.display = '';
     document.getElementById('bodyAnswer').textContent = answer;
   } else {
     // Fallback
     document.getElementById('blockTable').style.display = 'none';
+    hideChart();
     document.getElementById('blockAnswerSimple').style.display = '';
     document.getElementById('bodyAnswer').textContent = 'Data retrieved successfully.';
   }
@@ -206,23 +233,7 @@ function renderDataTable(data) {
     return;
   }
 
-  const obj = data[0];
-  const allCols = Object.keys(obj);
-
-  // Hide technical IDs/hashes and keep user-friendly columns first.
-  const hideSuffixes = ['_id', '_uuid', '_hash', '_nr', '_oid', '_hsh'];
-  const filteredCols = allCols.filter(c =>
-    !hideSuffixes.some(suffix => c.toLowerCase().endsWith(suffix))
-  );
-  const displayCols = filteredCols.length > 0 ? filteredCols : allCols.slice(0, 5);
-
-  displayCols.sort((a, b) => {
-    const aIsText = a.toLowerCase().includes('name') || a.toLowerCase().includes('txt');
-    const bIsText = b.toLowerCase().includes('name') || b.toLowerCase().includes('txt');
-    if (aIsText && !bIsText) return -1;
-    if (!aIsText && bIsText) return 1;
-    return 0;
-  });
+  const displayCols = getDisplayColumns(data);
 
   let html = '<thead><tr><th>#</th>';
   for (const col of displayCols) {
@@ -243,6 +254,195 @@ function renderDataTable(data) {
   html += '</tbody>';
 
   table.innerHTML = html;
+}
+
+function getDisplayColumns(data) {
+  if (!Array.isArray(data) || data.length === 0) return [];
+  const allCols = Object.keys(data[0]);
+
+  // Hide technical IDs/hashes and keep user-friendly columns first.
+  const hideSuffixes = ['_id', '_uuid', '_hash', '_nr', '_oid', '_hsh'];
+  const filteredCols = allCols.filter(c =>
+    !hideSuffixes.some(suffix => c.toLowerCase().endsWith(suffix))
+  );
+  const displayCols = filteredCols.length > 0 ? filteredCols : allCols.slice(0, 5);
+
+  displayCols.sort((a, b) => {
+    const aIsText = a.toLowerCase().includes('name') || a.toLowerCase().includes('txt');
+    const bIsText = b.toLowerCase().includes('name') || b.toLowerCase().includes('txt');
+    if (aIsText && !bIsText) return -1;
+    if (!aIsText && bIsText) return 1;
+    return 0;
+  });
+
+  return displayCols;
+}
+
+function toNumber(value) {
+  if (typeof value === 'number') return Number.isFinite(value) ? value : null;
+  if (value === null || value === undefined) return null;
+  const str = String(value).trim();
+  if (!str || str === '—') return null;
+
+  const cleaned = str.replace(/,/g, '').replace(/%$/, '');
+  const num = Number(cleaned);
+  return Number.isFinite(num) ? num : null;
+}
+
+function isDateLike(value) {
+  if (value === null || value === undefined) return false;
+  const s = String(value).trim();
+  if (!s) return false;
+  if (/^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(s)) return true;
+  if (/^\d{4}[-/]\d{1,2}$/.test(s)) return true;
+  const ts = Date.parse(s);
+  return Number.isFinite(ts) && s.length >= 6;
+}
+
+function pickNumericColumn(data, cols) {
+  const numericCols = cols.filter(col => data.some(row => toNumber(row[col]) !== null));
+  if (numericCols.length === 0) return null;
+
+  const score = col => {
+    const c = col.toLowerCase();
+    if (c.includes('count') || c.includes('total') || c.includes('score')) return 3;
+    if (c.includes('num') || c.includes('value') || c.includes('impact')) return 2;
+    return 1;
+  };
+
+  numericCols.sort((a, b) => score(b) - score(a));
+  return numericCols[0];
+}
+
+function pickLabelColumn(data, cols, numericCol) {
+  const candidates = cols.filter(col => col !== numericCol);
+  if (candidates.length === 0) return null;
+
+  const score = col => {
+    const vals = data.map(r => r[col]).filter(v => v !== null && v !== undefined && String(v).trim());
+    if (vals.length === 0) return 0;
+    const unique = new Set(vals.map(v => String(v))).size;
+    const ratio = unique / vals.length;
+    const c = col.toLowerCase();
+    let bonus = 0;
+    if (c.includes('name') || c.includes('project') || c.includes('txt')) bonus += 0.4;
+    if (c.includes('date') || c.includes('dt') || c.includes('month') || c.includes('year')) bonus += 0.3;
+    return ratio + bonus;
+  };
+
+  candidates.sort((a, b) => score(b) - score(a));
+  return candidates[0];
+}
+
+function detectChartType(labels, question) {
+  const q = (question || '').toLowerCase();
+  const trendHint = /(trend|over\s+time|timeline|daily|weekly|monthly|yearly|by\s+date|by\s+month|by\s+year)/;
+  const dateLikeCount = labels.filter(isDateLike).length;
+  const mostlyDate = labels.length > 0 && dateLikeCount / labels.length >= 0.6;
+  return (trendHint.test(q) || mostlyDate) ? 'line' : 'bar';
+}
+
+function hideChart() {
+  const block = document.getElementById('blockChart');
+  if (block) block.style.display = 'none';
+  if (resultChart) {
+    resultChart.destroy();
+    resultChart = null;
+  }
+}
+
+function renderAutoChart(data, question) {
+  const block = document.getElementById('blockChart');
+  const meta = document.getElementById('chartMeta');
+  const canvas = document.getElementById('resultChart');
+  if (!block || !meta || !canvas || !window.Chart) {
+    hideChart();
+    return;
+  }
+
+  if (!Array.isArray(data) || data.length < 2) {
+    hideChart();
+    return;
+  }
+
+  const displayCols = getDisplayColumns(data);
+  const yCol = pickNumericColumn(data, displayCols);
+  if (!yCol) {
+    hideChart();
+    return;
+  }
+  const xCol = pickLabelColumn(data, displayCols, yCol);
+
+  const rows = data.slice(0, 20);
+  const labels = rows.map((row, idx) => {
+    if (!xCol) return `#${idx + 1}`;
+    const raw = row[xCol];
+    return raw === null || raw === undefined || String(raw).trim() === '' ? `#${idx + 1}` : String(raw);
+  });
+  const values = rows.map(row => {
+    const n = toNumber(row[yCol]);
+    return n === null ? 0 : n;
+  });
+
+  if (values.every(v => v === 0)) {
+    hideChart();
+    return;
+  }
+
+  const chartType = detectChartType(labels, question);
+  const xName = xCol ? prettifyColumnName(xCol) : 'Row';
+  const yName = prettifyColumnName(yCol);
+  meta.textContent = `${yName} by ${xName} · showing ${rows.length} rows`;
+
+  if (resultChart) {
+    resultChart.destroy();
+    resultChart = null;
+  }
+
+  block.style.display = '';
+  const ctx = canvas.getContext('2d');
+  resultChart = new Chart(ctx, {
+    type: chartType,
+    data: {
+      labels,
+      datasets: [{
+        label: yName,
+        data: values,
+        borderColor: '#78BE20',
+        backgroundColor: chartType === 'line' ? 'rgba(120, 190, 32, 0.15)' : 'rgba(120, 190, 32, 0.32)',
+        borderWidth: 2,
+        pointRadius: chartType === 'line' ? 3 : 0,
+        pointHoverRadius: chartType === 'line' ? 4 : 0,
+        borderRadius: chartType === 'bar' ? 6 : 0,
+        tension: chartType === 'line' ? 0.28 : 0,
+        fill: chartType === 'line',
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: { color: '#c9d5ea' },
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#8b9ab5',
+            maxRotation: 35,
+            minRotation: 0,
+          },
+          grid: { color: 'rgba(255,255,255,0.06)' },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#8b9ab5' },
+          grid: { color: 'rgba(255,255,255,0.08)' },
+        },
+      },
+    },
+  });
 }
 
 function prettifyColumnName(col) {

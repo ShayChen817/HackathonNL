@@ -115,6 +115,7 @@
         <button class="sug-pill" onclick="setQ('How many ongoing projects do we have?')">Ongoing projects</button>
         <button class="sug-pill" onclick="setQ('What is the total number of feedback tickets submitted?')">Feedback tickets</button>
         <button class="sug-pill" onclick="setQ('Which projects have the most active testers?')">Top projects</button>
+        <button class="sug-pill" onclick="setQ('What are the top 10 projects by number of feedback tickets?')">Chart demo</button>
       </div>
     </div>
   </section>
@@ -147,6 +148,17 @@
         <!-- Data table (if structured) -->
         <div class="data-table-wrapper" id="blockTable" style="display:none">
           <table class="data-table" id="dataTable"></table>
+        </div>
+
+        <!-- Auto chart (if chartable table result) -->
+        <div class="chart-wrapper" id="blockChart" style="display:none">
+          <div class="chart-head">
+            <span class="chart-label">Visualization</span>
+            <span class="chart-meta" id="chartMeta"></span>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="resultChart"></canvas>
+          </div>
         </div>
 
       </div>
@@ -189,6 +201,7 @@
   <span>Governed by <a href="https://next.collibra.com" target="_blank">Collibra</a></span>
 </footer>
 
-<script src="app.js?v=20260311"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="app.js?v=20260311-fixed338"></script>
 </body>
 </html>

@@ -42,6 +42,9 @@ class DeterministicEngine:
     def count_active_testers(self, ongoing_only: bool = True) -> dict:
         """
         Count active testers using the governed Active Tester Flag definition.
+
+        Default answer grain is participant-program pairs so the deterministic
+        endpoint matches the governed SQL used in /api/ask.
         
         Returns a dict with the answer and full provenance.
         """
@@ -62,66 +65,93 @@ class DeterministicEngine:
             ongoing_ids = set(prj["Z_PRJ_NR"])
             project_filter = f"All projects ({len(ongoing_ids)} projects)"
 
-        total_participants = prt_filtered["Z_SMTP_ADR"].nunique()
+        total_participants = int(prt_filtered["Z_SMTP_ADR"].nunique())
 
-        # ── Step 3: Criterion 1 — feedback tickets >= 3 ─────────────
-        # Count distinct tickets per participant per project
-        ticket_counts = (
+        # ── Step 3: Build participant-program universe ──────────────
+        pair_universe_df = prt_filtered[["Z_SMTP_ADR", "Z_PRJ_OID"]].drop_duplicates()
+        total_pair_count = int(pair_universe_df.shape[0])
+
+        # ── Step 4: Criterion 1 — feedback tickets >= 3 (pair grain) ─
+        feedback_completion = (
             tkt_filtered
-            .groupby("Z_SMTP_ADR")["Z_TKT_NR"]
+            .groupby(["Z_SMTP_ADR", "Z_PRJ_NR"])["Z_TKT_NR"]
             .nunique()
-            .reset_index()
-            .rename(columns={"Z_TKT_NR": "ticket_count"})
+            .reset_index(name="feedback_ticket_count")
         )
-        crit1_emails = set(
-            ticket_counts[ticket_counts["ticket_count"] >= 3]["Z_SMTP_ADR"]
+        crit1_df = pair_universe_df.merge(
+            feedback_completion,
+            left_on=["Z_SMTP_ADR", "Z_PRJ_OID"],
+            right_on=["Z_SMTP_ADR", "Z_PRJ_NR"],
+            how="left",
         )
-
-        # ── Step 4: Criterion 2 — surveys completed >= 2 ────────────
-        survey_counts = (
-            prt_filtered
-            .groupby("Z_SMTP_ADR")["Z_SRV_CMP"]
-            .sum()
-            .reset_index()
-        )
-        survey_counts["Z_SRV_CMP"] = pd.to_numeric(survey_counts["Z_SRV_CMP"], errors="coerce").fillna(0)
-        crit2_emails = set(
-            survey_counts[survey_counts["Z_SRV_CMP"] >= 2]["Z_SMTP_ADR"]
-        )
-
-        # ── Step 5: Criterion 3 — completed > (incomplete + blocked + opted_out) ─
-        prt_act = prt_filtered.copy()
-        for col in ["Z_ACT_CMP", "Z_ACT_INC", "Z_ACT_BLK", "Z_ACT_OPT"]:
-            prt_act[col] = pd.to_numeric(prt_act[col], errors="coerce").fillna(0)
-
-        # Aggregate across projects per participant
-        act_agg = (
-            prt_act
-            .groupby("Z_SMTP_ADR")[["Z_ACT_CMP", "Z_ACT_INC", "Z_ACT_BLK", "Z_ACT_OPT"]]
-            .sum()
-            .reset_index()
-        )
-        act_agg["non_completed"] = act_agg["Z_ACT_INC"] + act_agg["Z_ACT_BLK"] + act_agg["Z_ACT_OPT"]
-        crit3_emails = set(
-            act_agg[act_agg["Z_ACT_CMP"] > act_agg["non_completed"]]["Z_SMTP_ADR"]
+        crit1_df["feedback_ticket_count"] = pd.to_numeric(
+            crit1_df["feedback_ticket_count"], errors="coerce"
+        ).fillna(0)
+        crit1_pairs = set(
+            tuple(x)
+            for x in crit1_df.loc[
+                crit1_df["feedback_ticket_count"] >= 3,
+                ["Z_SMTP_ADR", "Z_PRJ_OID"],
+            ].drop_duplicates().to_records(index=False)
         )
 
-        # ── Step 6: Combine with OR logic ────────────────────────────
-        active_emails = crit1_emails | crit2_emails | crit3_emails
+        # ── Step 5: Criterion 2/3 — row-level governed checks, dedup at pair grain ─
+        prt_eval = prt_filtered.copy()
+        for col in ["Z_SRV_CMP", "Z_ACT_CMP", "Z_ACT_INC", "Z_ACT_BLK", "Z_ACT_OPT"]:
+            prt_eval[col] = pd.to_numeric(prt_eval[col], errors="coerce").fillna(0)
+
+        crit2_pairs = set(
+            tuple(x)
+            for x in prt_eval.loc[
+                prt_eval["Z_SRV_CMP"] >= 2,
+                ["Z_SMTP_ADR", "Z_PRJ_OID"],
+            ].drop_duplicates().to_records(index=False)
+        )
+        crit3_pairs = set(
+            tuple(x)
+            for x in prt_eval.loc[
+                prt_eval["Z_ACT_CMP"] > (prt_eval["Z_ACT_INC"] + prt_eval["Z_ACT_BLK"] + prt_eval["Z_ACT_OPT"]),
+                ["Z_SMTP_ADR", "Z_PRJ_OID"],
+            ].drop_duplicates().to_records(index=False)
+        )
+
+        # ── Step 6: OR union + inclusion-exclusion components ────────
+        active_pairs = crit1_pairs | crit2_pairs | crit3_pairs
+        ab_pairs = crit1_pairs & crit2_pairs
+        ac_pairs = crit1_pairs & crit3_pairs
+        bc_pairs = crit2_pairs & crit3_pairs
+        abc_pairs = crit1_pairs & crit2_pairs & crit3_pairs
+
+        active_unique_people = len({email for email, _ in active_pairs})
+        formula_text = (
+            f"|A ∪ B ∪ C| = {len(crit1_pairs)} + {len(crit2_pairs)} + {len(crit3_pairs)} "
+            f"- {len(ab_pairs)} - {len(ac_pairs)} - {len(bc_pairs)} + {len(abc_pairs)} = {len(active_pairs)}"
+        )
 
         # ── Step 7: Build provenance ─────────────────────────────────
         return {
             "question": "How many active testers do we have?"
                         + (" (ongoing programs)" if ongoing_only else " (all programs)"),
-            "answer": len(active_emails),
+            "answer": len(active_pairs),
+            "answer_grain": "participant-program pairs",
+            "active_tester_participations": len(active_pairs),
+            "unique_active_testers": active_unique_people,
             "total_unique_participants": total_participants,
+            "total_participant_program_pairs": total_pair_count,
             "project_filter": project_filter,
             "criteria_breakdown": {
-                "criterion_1_tickets_gte_3": len(crit1_emails),
-                "criterion_2_surveys_gte_2": len(crit2_emails),
-                "criterion_3_completed_gt_rest": len(crit3_emails),
+                "criterion_1_tickets_gte_3": len(crit1_pairs),
+                "criterion_2_surveys_gte_2": len(crit2_pairs),
+                "criterion_3_completed_gt_rest": len(crit3_pairs),
             },
-            "combination_logic": "OR (any one criterion met = active)",
+            "criteria_intersections": {
+                "criterion_1_and_2": len(ab_pairs),
+                "criterion_1_and_3": len(ac_pairs),
+                "criterion_2_and_3": len(bc_pairs),
+                "criterion_1_and_2_and_3": len(abc_pairs),
+            },
+            "inclusion_exclusion_formula": formula_text,
+            "combination_logic": "OR at participant-program grain (any one criterion met = active)",
             "governed_sources": {
                 "business_term": "Active Tester",
                 "business_term_asset": "0198c234-11fe-73ff-be9b-c91312850031",
