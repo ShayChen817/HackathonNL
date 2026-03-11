@@ -1,3 +1,6 @@
+Flask==3.0.3
+flask-cors==5.0.0
+gunicorn==22.0.0
 delta-sharing==1.4.1
 pandas==3.0.1
 python-dotenv==1.2.2

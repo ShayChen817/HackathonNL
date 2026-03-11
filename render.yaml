@@ -3,7 +3,7 @@ services:
     name: ask-your-data
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt && pip install gunicorn
+    buildCommand: pip install -r requirements.txt
     startCommand: >-
       bash -lc 'if [ -n "$DELTA_SHARING_CONFIG_JSON" ]; then
       printf "%s" "$DELTA_SHARING_CONFIG_JSON" > /opt/render/project/src/config.json; fi;
