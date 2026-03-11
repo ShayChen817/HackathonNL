@@ -105,6 +105,35 @@ Expected output: 303 active testers, 20/20 runs identical.
 
 ---
 
+## One-Click Deploy (Render)
+
+This repo includes a Render Blueprint (`render.yaml`) for quick deployment.
+
+### Deploy Steps
+
+1. Push your latest changes to GitLab.
+2. In Render, click `New +` -> `Blueprint`.
+3. Connect this repository: `https://gitlab.com/next-level-challenge/team-18`.
+4. Render will detect `render.yaml` and create the web service.
+5. Fill required secret env vars in Render:
+
+```env
+COLLIBRA_USERNAME=<your-username>
+COLLIBRA_PASSWORD=<your-password>
+ANTHROPIC_API_KEY=<your-api-key>
+DELTA_SHARING_CONFIG_JSON={...full config.json content...}
+```
+
+6. Deploy and verify:
+    - Health: `/api/status`
+    - App UI: `/`
+
+Notes:
+- `DELTA_SHARING_CONFIG_JSON` is written to `/opt/render/project/src/config.json` at runtime.
+- `DELTA_SHARING_PROFILE` is preconfigured in `render.yaml` to use that runtime file.
+
+---
+
 ## Active Tester Definition
 
 From Collibra Business Term (asset ``0198c234-11fe-73ff-be9b-c91312850031``):

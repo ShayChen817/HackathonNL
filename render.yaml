@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: ask-your-data
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && pip install gunicorn
+    startCommand: >-
+      bash -lc 'if [ -n "$DELTA_SHARING_CONFIG_JSON" ]; then
+      printf "%s" "$DELTA_SHARING_CONFIG_JSON" > /opt/render/project/src/config.json; fi;
+      gunicorn app:app -b 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 300'
+    healthCheckPath: /api/status
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DELTA_SHARING_LIMIT
+        value: "0"
+      - key: DELTA_SHARING_PROFILE
+        value: /opt/render/project/src/config.json
+      - key: COLLIBRA_USERNAME
+        sync: false
+      - key: COLLIBRA_PASSWORD
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DELTA_SHARING_CONFIG_JSON
+        sync: false
