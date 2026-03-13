@@ -22,7 +22,14 @@ Same LLM. Same data. Only the **context** changed.
 
 ### Key Result
 
-**338 active testers** in ongoing programs — verified across **20 consecutive runs** with zero variance.
+**338 active testers** in ongoing programs — verified two ways:
+
+| Verification | Method | Result |
+|---|---|---|
+| Deterministic engine | Pure pandas set union, no LLM | **338** (20/20 runs identical) |
+| Claude RAG pipeline | LLM reads Collibra definitions, generates SQL independently | **338** (matches exactly) |
+
+Same answer, two completely independent code paths. The governed context is the single source of truth.
 
 ---
 
@@ -46,10 +53,10 @@ Answer with full traceability
 
 ### Two Engines
 
-| Engine | Use Case | Determinism |
-|--------|----------|-------------|
-| **RAG Pipeline** (``ask_your_data.py``) | Open-ended, exploratory questions | High (temperature=0) |
-| **Deterministic Rulebook** (``deterministic_engine.py``) | Mission-critical governed metrics | 100% (no LLM) |
+| Engine | Use Case | Determinism | Verified Answer |
+|--------|----------|-------------|----------------|
+| **RAG Pipeline** (``ask_your_data.py``) | All questions incl. active tester count | High (temperature=0, Claude generates SQL from Collibra definitions) | **338** |
+| **Deterministic Rulebook** (``deterministic_engine.py``) | Mission-critical governed metrics, `/api/active-testers` endpoint | 100% (no LLM, pure pandas) | **338** |
 
 ---
 
