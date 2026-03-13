@@ -569,31 +569,9 @@ def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
     """
     system_prompt = build_system_prompt(context, table_schemas)
 
-    # Deterministic shortcut for frequently used governed leaderboard queries.
-    active_tester_template = _build_active_tester_count_sql(question)
-    if active_tester_template:
-        sql_query = active_tester_template["sql_query"]
-        query_result = None
-        query_error = None
-        try:
-            result_df = execute_sql(sql_query)
-            query_result = result_df.to_dict(orient="records")
-        except Exception as e:
-            query_error = str(e)
-
-        return {
-            "mode": "with_context",
-            "execution_mode": "rulebook_sql",
-            "question": question,
-            "llm_response": _build_active_tester_count_response(
-                sql_query,
-                active_tester_template["scope_label"],
-                active_tester_template["unique_only"],
-            ),
-            "sql_query": sql_query,
-            "query_result": query_result,
-            "query_error": query_error,
-        }
+    # NOTE: Active tester count now routes through Claude (governed RAG) so the LLM
+    # demonstrates it can derive the correct answer from Collibra definitions.
+    # The rulebook helpers are still available for the /api/active-testers endpoint.
 
     high_impact_template = _build_high_impact_low_active_sql(question)
     if high_impact_template:
