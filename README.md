@@ -16,13 +16,13 @@ LLMs can generate SQL from natural language  but without business context, they 
 |---|---|---|
 | "Active Tester" | Guessed ``Z_ENG_ST = 'ACTIVE'`` | Governed: 3-criteria OR logic |
 | "Ongoing" | Guessed ``Z_PRJ_STAT = 'ACTIVE'`` | Governed: ``Z_PRJ_STAT = 'Ongoing'`` |
-| **Result** | **0 testers (wrong)** | **303 testers (correct)** |
+| **Result** | **0 testers (wrong)** | **338 testers (correct)** |
 
 Same LLM. Same data. Only the **context** changed.
 
 ### Key Result
 
-**303 active testers** in ongoing programs  verified across **20 consecutive runs** with zero variance.
+**338 active testers** in ongoing programs — verified across **20 consecutive runs** with zero variance.
 
 ---
 
@@ -101,7 +101,7 @@ python ask_your_data.py
 python test_deterministic.py
 ```
 
-Expected output: 303 active testers, 20/20 runs identical.
+Expected output: 338 active testers, 20/20 runs identical.
 
 ---
 
@@ -151,13 +151,13 @@ From Collibra Business Term (asset ``0198c234-11fe-73ff-be9b-c91312850031``):
 
 | Criterion | Participants |
 |-----------|-------------|
-| Tickets >= 3 | 73 |
-| Surveys >= 2 | 284 |
-| Completed > rest | 64 |
-| **Overlap removed** | **118** |
-| **Final (set union)** | **303** |
+| Tickets >= 3 | 78 |
+| Surveys >= 2 | 277 |
+| Completed > rest | 159 |
+| **Overlap removed** | **176** |
+| **Final (set union)** | **338** |
 
-Inclusion-exclusion proof: ``73 + 284 + 64 - 57 - 28 - 61 + 28 = 303``
+Inclusion-exclusion proof: ``78 + 277 + 159 - 36 - 42 - 129 + 31 = 338``
 
 ---
 
