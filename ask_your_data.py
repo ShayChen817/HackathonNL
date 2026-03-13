@@ -569,85 +569,8 @@ def ask_with_context(question: str, context: dict, table_schemas: dict) -> dict:
     """
     system_prompt = build_system_prompt(context, table_schemas)
 
-    # NOTE: Active tester count now routes through Claude (governed RAG) so the LLM
-    # demonstrates it can derive the correct answer from Collibra definitions.
-    # The rulebook helpers are still available for the /api/active-testers endpoint.
-
-    high_impact_template = _build_high_impact_low_active_sql(question)
-    if high_impact_template:
-        sql_query = high_impact_template["sql_query"]
-        query_result = None
-        query_error = None
-        try:
-            result_df = execute_sql(sql_query)
-            query_result = result_df.to_dict(orient="records")
-        except Exception as e:
-            query_error = str(e)
-
-        return {
-            "mode": "with_context",
-            "execution_mode": "rulebook_sql",
-            "question": question,
-            "llm_response": _build_high_impact_low_active_response(
-                question,
-                sql_query,
-                high_impact_template["impact_min"],
-                high_impact_template["active_max"],
-            ),
-            "sql_query": sql_query,
-            "query_result": query_result,
-            "query_error": query_error,
-        }
-
-    issue_template = _build_issue_leaderboard_sql(question)
-    if issue_template:
-        sql_query = issue_template["sql_query"]
-        query_result = None
-        query_error = None
-        try:
-            result_df = execute_sql(sql_query)
-            query_result = result_df.to_dict(orient="records")
-        except Exception as e:
-            query_error = str(e)
-
-        return {
-            "mode": "with_context",
-            "execution_mode": "rulebook_sql",
-            "question": question,
-            "llm_response": _build_issue_template_response(
-                question,
-                sql_query,
-                issue_template["scope_label"],
-            ),
-            "sql_query": sql_query,
-            "query_result": query_result,
-            "query_error": query_error,
-        }
-
-    scoped_template = _build_feedback_ticket_leaderboard_sql(question)
-    if scoped_template:
-        sql_query = scoped_template["sql_query"]
-        query_result = None
-        query_error = None
-        try:
-            result_df = execute_sql(sql_query)
-            query_result = result_df.to_dict(orient="records")
-        except Exception as e:
-            query_error = str(e)
-
-        return {
-            "mode": "with_context",
-            "execution_mode": "rulebook_sql",
-            "question": question,
-            "llm_response": _build_feedback_ticket_template_response(
-                question,
-                sql_query,
-                scoped_template["scope_label"],
-            ),
-            "sql_query": sql_query,
-            "query_result": query_result,
-            "query_error": query_error,
-        }
+    # All questions now route through Claude (governed RAG).
+    # Rulebook helpers remain available for the /api/active-testers endpoint only.
 
     if not LLM_AVAILABLE:
         return {
