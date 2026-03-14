@@ -51,13 +51,6 @@ Layer 4: Data Layer (Databricks via Delta Sharing)
 Answer with full traceability
 ```
 
-### Two Engines
-
-| Engine | Use Case | Determinism | Verified Answer |
-|--------|----------|-------------|----------------|
-| **RAG Pipeline** (``ask_your_data.py``) | All questions incl. active tester count | High (temperature=0, Claude generates SQL from Collibra definitions) | **338** |
-| **Deterministic Rulebook** (``deterministic_engine.py``) | Mission-critical governed metrics, `/api/active-testers` endpoint | 100% (no LLM, pure pandas) | **338** |
-
 ---
 
 ## Quick Start
